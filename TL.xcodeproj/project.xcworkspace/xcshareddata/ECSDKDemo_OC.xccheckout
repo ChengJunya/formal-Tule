@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>74A596BA-F282-4B7B-9AC5-5800F8CBA58E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ECSDKDemo_OC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>dd6d2e1d-415a-4aae-9b9e-7302682725ca++7873</key>
+		<string>http://192.168.178.11/iosdb/yfs/demo4.0/ios</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>trunk/ECSDKDemo_OC/ECSDKDemo_OC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>dd6d2e1d-415a-4aae-9b9e-7302682725ca++7873</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>dd6d2e1d-415a-4aae-9b9e-7302682725ca++7873</key>
+		<string>http://192.168.178.11/iosdb</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://192.168.178.11/iosdb/yfs/demo4.0/ios/trunk/ECSDKDemo_OC/ECSDKDemo_OC.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>dd6d2e1d-415a-4aae-9b9e-7302682725ca++7873</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>dd6d2e1d-415a-4aae-9b9e-7302682725ca++7873</string>
+			<key>IDESourceControlWCCName</key>
+			<string>workspace</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TLActivityDetailEntity" representedClassName="TLActivityDetailEntity" syncable="YES">
+        <attribute name="activityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="costAverage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destnation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="enrollCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personNum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="enrollUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLActivityEntity" representedClassName="TLActivityEntity" syncable="YES">
+        <attribute name="activityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="costAverage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destnation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="enrollCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personNum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLCarDetailEntity" representedClassName="TLCarDetailEntity" syncable="YES">
+        <attribute name="carBrand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carEvalDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carMaker" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="drive_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="drive_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engine_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engine_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gearBox_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gearBox_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilCost_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilCost_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilType_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilType_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price_high" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price_low" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seatCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLCarEvalDetailEntity" representedClassName="TLCarEvalDetailEntity" syncable="YES">
+        <attribute name="carEvaId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carEvalDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilCost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLCarEvalutionEntity" representedClassName="TLCarEvalutionEntity" syncable="YES">
+        <attribute name="carEvaId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="evalText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oilCost" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLCarRectDetailEntity" representedClassName="TLCarRectDetailEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="driveDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLCarRectEntity" representedClassName="TLCarRectEntity" syncable="YES">
+        <attribute name="carImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="driveDistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rentType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLCarServiceDetailEntity" representedClassName="TLCarServiceDetailEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLCarServiceEntity" representedClassName="TLCarServiceEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLImageEntity" representedClassName="TLImageEntity" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLListCarEntity" representedClassName="TLListCarEntity" syncable="YES">
+        <attribute name="carId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priceRange" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLSecondGoodsDetailEntity" representedClassName="TLSecondGoodsDetailEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oldDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLSecondGoodsEntity" representedClassName="TLSecondGoodsEntity" syncable="YES">
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oldDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLStoreDetailEntity" representedClassName="TLStoreDetailEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="openTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="park" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLStoreEntity" representedClassName="TLStoreEntity" syncable="YES">
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="merchantType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TLTripDataEntity" representedClassName="TLTripDataEntity" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="travelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="travel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLTripTravelEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLTripDetailEntity" representedClassName="TLTripDetailEntity" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="travelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+        <relationship name="travel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLTripTravelEntity" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TLTripUserEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLTripTravelEntity" representedClassName="TLTripTravelEntity" syncable="YES">
+        <attribute name="cityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lsNodeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modifyTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="travelId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TLImageEntity" syncable="YES"/>
+    </entity>
+    <entity name="TLTripUserEntity" representedClassName="TLTripUserEntity" syncable="YES">
+        <attribute name="loginId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userIndex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visitTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TLActivityDetailEntity" positionX="5220" positionY="-1080" width="128" height="270"/>
+        <element name="TLActivityEntity" positionX="5211" positionY="-1116" width="128" height="208"/>
+        <element name="TLCarDetailEntity" positionX="5229" positionY="-1053" width="128" height="420"/>
+        <element name="TLCarEvalDetailEntity" positionX="5238" positionY="-1044" width="128" height="163"/>
+        <element name="TLCarEvalutionEntity" positionX="5211" positionY="-1071" width="128" height="148"/>
+        <element name="TLCarRectDetailEntity" positionX="5247" positionY="-1035" width="128" height="238"/>
+        <element name="TLCarRectEntity" positionX="5220" positionY="-1062" width="128" height="148"/>
+        <element name="TLCarServiceDetailEntity" positionX="5256" positionY="-1026" width="128" height="223"/>
+        <element name="TLCarServiceEntity" positionX="5265" positionY="-1017" width="128" height="148"/>
+        <element name="TLImageEntity" positionX="5490" positionY="-1224" width="128" height="73"/>
+        <element name="TLListCarEntity" positionX="5265" positionY="-1017" width="128" height="148"/>
+        <element name="TLSecondGoodsDetailEntity" positionX="5256" positionY="-1026" width="128" height="238"/>
+        <element name="TLSecondGoodsEntity" positionX="5247" positionY="-1035" width="128" height="163"/>
+        <element name="TLStoreDetailEntity" positionX="5238" positionY="-1044" width="128" height="223"/>
+        <element name="TLStoreEntity" positionX="5229" positionY="-1053" width="128" height="165"/>
+        <element name="TLTripDataEntity" positionX="5202" positionY="-1196" width="128" height="193"/>
+        <element name="TLTripDetailEntity" positionX="5346" positionY="-1197" width="128" height="223"/>
+        <element name="TLTripTravelEntity" positionX="5004" positionY="-1189" width="128" height="178"/>
+        <element name="TLTripUserEntity" positionX="5632" positionY="-1161" width="128" height="118"/>
+    </elements>
+</model>

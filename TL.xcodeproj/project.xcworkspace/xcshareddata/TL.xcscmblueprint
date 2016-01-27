@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A0B7E6C0-8549-4051-A787-6690827B7AE6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : "%E9%80%94%E4%B9%901.5.1\/ECSDKDemo_OC\/thirdparty\/KxMenu\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TL",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TL.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/172.21.31.24:18080\/svn\/Drug",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "da896091-8235-4b1a-b360-3386eed628a9++2439"
+    }
+  ]
+}

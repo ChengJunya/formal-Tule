@@ -1,0 +1,162 @@
+/*
+ Localization.strings
+ TL
+ 
+ Created by Rainbow on 2/4/15.
+ Copyright (c) 2015 ronglian. All rights reserved.
+ */
+
+/*
+ 常用的
+ */
+"comSure"               = "确定";
+"comCancel"             = "取消";
+"comDelete"             = "删除";
+"comSubmit"             = "提交";
+"comIknow"              = "知道了";
+"comNextStep"           = "下一步";
+"netErrNotLogin"        = "您的账户未登录";
+"netLoginTimeOut"       = "登录超时！请重新登录";
+"netErrBeKickoff"       = "您的账户在另一台设备上登录";
+"netErrUnknowError"     = "网络服务不可用";
+"netConnectErr"         = "网络连接失败";
+"netNotify2G3G"         = "当前使用为2G/3G网络";
+"netConnectTimeOut"     = "网络连接超时";
+"netRequestErr"         = "网络不给力，请您再试试！";
+"comNavMessage"         = "消息";
+"comNavHome"            = "首页";
+"comNavShare"           = "分享";
+
+
+/*
+ 针对第三方库的
+ */
+// 1. IQKeyboardManager
+"Previous"              = "前一项";
+"Next"                  = "后一项";
+
+// 2. PECropViewController
+"cropvcCancel"          = "取消";
+"cropvcDone"            = "完成";
+"Done"                  = "确定";
+"photo"                 = "张图片";
+"photos"                 = "张图片";
+"of"                 = "/";
+
+
+/*
+ LoginViewController
+ */
+"logvcLogin"            = "登录";
+"logvcGustLogin"        = "随便逛逛";
+"logvcUserName"         = "用户名";
+"logvcPassword"         = "密码";
+"logvcFogotPwd"         = "忘记密码?";
+"logvcNewUser"          = "新用户注册";
+"logvcLoginFailure"     = "登录失败";
+"logvcLoginTaobao"      = "淘宝账号登录";
+"logvcLoginTaobaoClose" = "关闭";
+"logvcLoginTaobaoBack"  = "后退";
+"logvcHelp"             = "帮助";
+"logLoading"            = "正在更新数据，请耐心等待...";
+"logvcNeedLogin"        = "您需要登录后才能进行后续操作";
+"logvcGotoLogin"        = "去登录";
+
+/*
+ FogotPwdStepAController
+ */
+"fpavcTitle"            = "手机验证";
+"fpavcInputPhone"       = "请输入您当前账号所绑定的手机号";
+"fpavcInputCode"        = "验证码";
+"fpavcGetCode"          = "获取验证码";
+"fpavcNextStep"         = "下一步";
+"fpavcCertifyFailure"   = "验证失败";
+"fverifySmsTimesOut"    = "对不起!验证码发送超过当日最大限制（每日10次），请明天重试。";
+
+/*
+ FogotPwdStepBController
+ */
+"fpbvcTitle"            = "重置密码";
+"fpbvcNewPwd"           = "新密码";
+"fpbvcPwdAgain"         = "请再次输入新密码";
+"fpbvcNextStep"         = "保存并登录";
+"fpbvcUpdatePwdFailure" = "更新密码失败";
+
+/*
+ RegisterStepAViewController
+ */
+"rsavcTitle"            = "注册";
+"rsavcInputPhone"       = "请输入您的手机号";
+"rsavcInputCode"        = "验证码";
+"rsavcInputPwd"         = "请输入登录密码";
+"rsavcReInputPwd"       = "请再次输入密码";
+"rsavcGetCode"          = "获取验证码";
+"rsavcGetCodeSucceed"   = "验证码已成功下发到您的手机上，请在10分钟内使用";
+"rsavcGetCodeFailure"   = "由于网络原因，短信发送失败，请重新获取验证码";
+"rsavcRegisterFailure"  = "注册失败";
+
+"registerStepATitle"    = "注册1/3";
+"registerStepBTitle"    = "注册2/3";
+"registerStepCTitle"    = "注册3/3";
+"goTuLe"                = "开始途乐";
+
+/*
+ ModifyPasswordViewController
+ */
+"mpvcInitPwd"           = "原密码";
+"mpvcNewPwd"            = "新密码";
+"mpvcOKNewPwd"          = "确认新密码";
+"mpvcTipPwd"            = "请输入密码";
+"mpvcTipPwdSame"        = "新密码与原密码相同";
+
+/*
+ RegisterStepBViewController
+ */
+"rsbvcTitle"            = "实名认证";
+"rsbvcUserName"         = "姓名";
+"rsbvcIdCard"           = "身份证";
+"rsbvcLatest"           = "最近就诊医院：";
+"rsbvcMedicalCard"      = "医保卡号";
+"rsbvcCheckProtocol"    = "查看协议详情 >";
+"rsbvcAgreeProtocol"    = "同意协议";
+"rsbvcNextStep"         = "下一步";
+"rsbvcSkip"             = "下次再说";
+"rsbvcdpMedical"        = "医保卡/就诊卡";
+"rsbvcdpHospital"       = "医院名称";
+"rsbvcdpProv"           = "省";
+"rsbvcdpCity"           = "市";
+"rsbvcdpArea"           = "县";
+"rsbvcAuthFailure"      = "实名认证失败";
+
+/*
+ RegisterProtocolController
+ */
+"repvcTitle"            = "软件许可协议";
+"repvcProtocolTitle"    = "软件许可使用协议";
+"repvcProtocolContext"  = "      该文档首先给出了整个系统的整体网络结构和功能结构的概貌，试图从总体架构上给出整个系统的轮廓，然后又对功能需求、性能需求和其它非功能性需求进行了详细的描述。其中对功能需求的描述采用了UML(标准建模语句)的用例模型方式，不仅描述了每一用例的基本事件流和备选事件流，而且还给出了非常直观的用例图。这些文字和图形都为了详细准确地描述用户的需求，同时也为用户更容易地理解这些需求的描述创造了条件。\n        该文档详尽说明了这一软件产品的需求和规格，这些规格说明是进行设计的基础，也是编写测试用例和进行系统测试的主要依据。同时，该文档也是用户确定软件功能需求的主要依据。功能的开发是基于用户的实际需求，本文档是基于用户原始需求，并针对需求进行业务分析，将业务需求科学的转化为开发、设计、测试人员可通俗易懂的用技术语言描述的功能点，便于开发、设计、测试人员准确的把握用户需求，按质交付满足客户实际需求，符合用户日常操作的最终项目或产品。";
+
+/*
+ TLHomeViewController
+ */
+"tuleHomeTitle"         = "途乐";
+
+/*
+ StartConsultViewController
+ */
+
+"scovcTitle2"           = "添加图片";
+"scovcPushRange"        = "推送范围：";
+"scovcStartBtnPush"     = "确认";
+"scovcActionCamera"     = "拍照";
+"scovcActionPhoto"      = "从相册选择";
+"scovcActionCancle"     = "取消";
+"scovcPhotoDelete"      = "确定删除此照片吗？";
+"scovcReStar"           = "重新发布";
+"scovcPushSucc"         = "发布成功！";
+"scovcRepushSucc"       = "重发成功！";
+"scovcUpLoadFaild"      = "网络不给力，请您再试试！";
+"scovcNoLocation"       = "未能获取位置，请点击此处手动定位";
+
+
+"mctvcMsgTips"                = "当前没有数据";
+"setvcAlertBtnSure"     = "确定";

@@ -1,0 +1,13 @@
+//
+//  TLTuleAdView.h
+//  TL
+//
+//  Created by Rainbow on 2/12/15.
+//  Copyright (c) 2015 ronglian. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface TLTuleAdView : UIView
+
+@end
