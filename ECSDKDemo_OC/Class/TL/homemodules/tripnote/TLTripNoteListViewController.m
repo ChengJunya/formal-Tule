@@ -27,11 +27,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)itemSelected:(NSDictionary *)itemData{
     
     [self pushViewControllerWithName:@"TLWayBookDetailViewController" itemData:itemData block:^(TLWayBookDetailViewController* obj) {
@@ -45,9 +40,6 @@
 
 -(void)addCreateActionBtnHandler{
     WEAK_SELF(self);
-    //    [self pushViewControllerWithName:@"TLNewWayBookViewController" block:^(id obj) {
-    //
-    //    }];
     
     TLSelectWaybookViewController *selectWaybookVC = [[TLSelectWaybookViewController alloc] initWIthType:@"3"];
     selectWaybookVC.NewItemSelectedBlock = ^(id itemData){
@@ -102,22 +94,20 @@
     }
 }
 
-
-
 -(void)initData{
-        self.refrashTime = [RUtiles stringFromDateWithFormat:[NSDate new] format:@"yyyyMMddHHmmss"];
+    self.refrashTime = [RUtiles stringFromDateWithFormat:[NSDate new] format:@"yyyyMMddHHmmss"];
     self.currentPage = 1;
     TLTripListRequestDTO *request = [[TLTripListRequestDTO alloc] init];
-    
+
     request.currentPage = [NSString stringWithFormat:@"%d",self.currentPage];
     request.pageSize = [NSString stringWithFormat:@"%d",TABLE_PAGE_SIZE];
     request.orderByTime = self.orderByTime;
     request.orderByViewCount = self.orderByViewCount;
     request.cityId = self.cityId;
-    request.type = MODULE_TRIPNOTE_TYPE;
+    request.type = MODULE_STRATEGY_TYPE;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.currentTime = self.refrashTime;
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.orderBy = self.sortId;
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getTripList:request requestArr:self.requestArray block:^(id obj, BOOL ret, int pageNumber) {
@@ -133,8 +123,6 @@
             [self.listAssistView setRetryWithTarget:self action:@selector(initData)];
         }
     }];
-    
-    
 }
 
 -(void)refreshData{

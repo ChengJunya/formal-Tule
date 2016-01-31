@@ -30,21 +30,9 @@
     // Do any additional setup after loading the view.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    //self.navView.actionBtns = @[];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 -(void)itemSelected:(NSDictionary *)itemData{
 
-    
     [self pushViewControllerWithName:@"TLStoreDetailViewController" itemData:itemData block:^(TLStoreDetailViewController* obj) {
         obj.dataType = [self.itemData valueForKey:@"DATATYPE"];
     }];
@@ -58,7 +46,6 @@
 }
 
 -(void)addSortView{
-    ///////////////
     
     NSArray *sortMenuArray =  @[@{@"ID":@"1",@"NAME":@"地点"},
                                 @{@"ID":@"2",@"NAME":@"种类"},
@@ -68,10 +55,7 @@
     _sortMenuView.isMenuHidden = YES;
     [self.view addSubview:_sortMenuView];
     
-    
-    
-    
-    
+
     WEAK_SELF(self);
     
     citySelctView = [[TLCitySelectView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.width, self.view.height/2)];
@@ -88,10 +72,6 @@
     
     //种类---餐饮、住宿、娱乐；排序：离我最近
     NSArray *carTypeMenuItemsArray = [[GUserDataHelper keyValueDic] objectForKey:@"merchantType"];
-//    @[@{@"ID":@"1",@"NAME":@"全部"},
-//                                        @{@"ID":@"2",@"NAME":@"餐饮"},
-//                                        @{@"ID":@"3",@"NAME":@"住宿"},
-//                                        @{@"ID":@"4",@"NAME":@"娱乐"}];
     TLDropMenu *carTypeItemMenu = [[TLDropMenu alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame),80.0f) menuData:carTypeMenuItemsArray];
     carTypeItemMenu.ItemSelectedBlock = ^(id itemData){
         [weakSelf carTypeSortChange:itemData];
@@ -190,7 +170,7 @@
     request.type = MODULE_STORE_TYPE;
     request.currentTime = self.refrashTime;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.orderBy = self.sortId;
     request.merchantType = storeTypeId;
 
@@ -199,9 +179,9 @@
     [GTLModuleDataHelper getStoreList:request requestArray:self.requestArray block:^(id obj, BOOL ret, int pageNumber) {
         
         
-        [GHUDAlertUtils hideLoadingInView:self.view];
-        [self endHeaderRefrash];
-        if (ret) {
+    [GHUDAlertUtils hideLoadingInView:self.view];
+    [self endHeaderRefrash];
+    if (ret) {
             self.arrayData = obj;
             [self refrashTableView];
             [self.listAssistView setShowType:ELAST_HIDE showLabel:nil];

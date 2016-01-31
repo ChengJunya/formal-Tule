@@ -227,8 +227,6 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
         return nil;
     }
     
-
-    
     NSString *username = [loginInfo valueForKey:@"loginId"];
     NSString *password = [loginInfo valueForKey:@"loginPwd"];
     
@@ -365,7 +363,7 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
                         initWithFormat:@"%g",
                         self.locationManager.location.coordinate.longitude];
     
-    if (currentLatitude.integerValue==0) {
+    if (currentLatitude.integerValue == 0) {
         currentLatitude = @"-1";
     }
     
@@ -418,13 +416,9 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
 
 /**
  *  logintype 1-手动 2-自动
- *
- *  @param loginType <#loginType description#>
  */
 -(void)loginIM:(NSInteger)loginType
 {
-    
-    
     UserInfoDTO *userInfo = [GUserDataHelper tlUserInfo];
     ECLoginInfo *loginInfo = [[ECLoginInfo alloc] initWithAccount:userInfo.voipAccount Password:userInfo.voipToken];
     loginInfo.serviceUrl = @"https://app.cloopen.com:8883";
@@ -450,12 +444,6 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
                 [BPush setTag:self.tlUserInfo.loginId];
                  [BPush bindChannel];
             }
-            
-            
-            
-            
-            
-            
             [weakSelf initUserData];
         }
         else{
@@ -469,8 +457,6 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
 
 
 -(void)initUserData{
-   
-    
     
     [[DemoGlobalClass sharedInstance].mainAccontDictionary removeAllObjects];
     
@@ -516,12 +502,7 @@ ZX_IMPLEMENT_SINGLETON(UserDataHelper)
         }
     }];
     
-    
-
-    
 }
-
-
 
 -(void)getCommonCode{
     /*

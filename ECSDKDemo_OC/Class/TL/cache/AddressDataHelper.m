@@ -51,12 +51,6 @@ ZX_IMPLEMENT_SINGLETON(AddressDataHelper)
     return self;
 }
 
-
-
-
-
-
-
 /*
  * 清空内存中的数据
  */
@@ -67,11 +61,6 @@ ZX_IMPLEMENT_SINGLETON(AddressDataHelper)
     self.isRequestSucceed = NO;
 }
 
-
-
-
-
-///yf
 
 /**
  * 获取省份列表
@@ -85,7 +74,7 @@ ZX_IMPLEMENT_SINGLETON(AddressDataHelper)
         return;
     }
     
-    TLProvinceRequestDTO* proviceRequstDTO = [[TLProvinceRequestDTO alloc] init];
+    TLProvinceRequestDTO *proviceRequstDTO = [[TLProvinceRequestDTO alloc] init];
 
     
     NSNumber *requestTag = [GDataManager asyncRequestByType:NetAdapter_User_Register_Provice_Getter andObject:proviceRequstDTO success:^(TLProvinceResponseDTO* responseDTO) {
@@ -112,7 +101,7 @@ ZX_IMPLEMENT_SINGLETON(AddressDataHelper)
         return;
     }
     
-    TLCityRequestDTO* addrequestDTO = [[TLCityRequestDTO alloc] init];
+    TLCityRequestDTO *addrequestDTO = [[TLCityRequestDTO alloc] init];
     addrequestDTO.provinceId = provinceId;
     
     NSNumber *requestTag = [GDataManager asyncRequestByType:NetAdapter_User_Register_City_Getter andObject:addrequestDTO success:^(TLCityResponseDTO* responseDTO) {

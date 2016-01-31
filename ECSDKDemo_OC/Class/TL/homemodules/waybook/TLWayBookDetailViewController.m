@@ -40,7 +40,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    //[self getDetailData];
 
 }
 
@@ -128,13 +127,6 @@
     self.navBackItemHidden = NO;
     [self getDetailData];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 -(void)downloadAction{
     
@@ -255,8 +247,6 @@
     shareDto.shareTitle = detailDto.title;//obj.title;
     shareDto.shareImageUrl = imageUrl;//obj.imageUrl;
     shareDto.patAwardId = @"";//obj.patAwardId;
-    
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SHARE object:shareDto];
 }
 
@@ -270,7 +260,7 @@
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getWayBookDetail:requestDTO requestArray:self.requestArray block:^(id obj, BOOL ret) {
         
-        [GHUDAlertUtils hideLoadingInView:self.view];
+    [GHUDAlertUtils hideLoadingInView:self.view];
         if (ret) {
             detailDto = obj;
             [weakSelf addDetailView];
@@ -306,8 +296,6 @@
     
 }
 
-
-
 -(void)addComment{
     
     NSDictionary *itemData = @{@"travelId":detailDto.travelId,@"type":self.type};
@@ -331,11 +319,7 @@
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
     nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:nc animated:YES completion:nil];
-    
-    
+
 }
-
-
-
 
 @end

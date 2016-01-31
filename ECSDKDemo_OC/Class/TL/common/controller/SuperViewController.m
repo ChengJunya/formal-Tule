@@ -64,7 +64,7 @@
 
     
     self.requestArray = [NSMutableArray array];
-    
+
     //[self addLongNotification];
     //[GHUDAlertUtils dismissAllHUDWhenEnterVC];
 }
@@ -91,37 +91,6 @@
     [self cancelAllNetRequest];
 
 }
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    //[self removeCommNotification];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    //[self removeLongNotification];
-    //    [self releaseHMTextFieldsArray:self.view];
-}
-
-- (void)releaseHMTextFieldsArray:(UIView *) view {
-    /*
-     for (UIView *subView in [view subviews]) {
-     if ([subView isKindOfClass:[MHTextField class]]) {
-     ((MHTextField *)subView).textFields = nil;
-     }else{
-     [self releaseHMTextFieldsArray:subView];
-     }
-     }
-     */
-}
-
 
 #pragma mark -
 #pragma mark - tools

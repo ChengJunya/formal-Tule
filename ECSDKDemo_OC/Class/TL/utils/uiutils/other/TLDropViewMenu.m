@@ -35,7 +35,6 @@
         _menuData = menuData;
         _btnArray = [[NSMutableArray alloc] init];
         [self setUpView];
-        //[self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)]];
         
     }
     return self;
@@ -99,12 +98,6 @@
     }];
 }
 
-//- (void)handleTapGesture:(UIGestureRecognizer *)tapGesture
-//{
-//    self.isMenuHidden = YES;
-//}
-
-
 -(void)btnHandler:(UIButton*)btn{
      NSUInteger selectedIndex = [self.btnArray indexOfObject:btn];
     if (btn.selected) {
@@ -124,14 +117,6 @@
     }];
     
     self.isMenuHidden = !btn.selected;
-    
-//    NSUInteger selectedIndex = [self.btnArray indexOfObject:btn];
-//    NSArray *menuData = self.menuData;// ID NAME
-//    id itemData = [menuData objectAtIndex:selectedIndex];
-//    if (self.ItemSelectedBlock) {
-//        self.ItemSelectedBlock(itemData);
-//    }
-    
 }
 -(void)setIsMenuHidden:(BOOL)isMenuHidden{
     _isMenuHidden = isMenuHidden;
@@ -155,7 +140,7 @@
         [UIView animateWithDuration:0.5f animations:^{
             self.frame = newFrame;
         } completion:^(BOOL finished) {
-            //self.hidden = NO;
+            
         }];
     }
 }
@@ -165,9 +150,7 @@
     if (self.mainContentView) {
         [self.mainContentView removeFromSuperview];
     }
-    
 
-    
     UIView *subView = [self.viewArray objectAtIndex:index];
     self.mainContentView = [[UIView alloc] initWithFrame:CGRectMake(0.f, TLDROPMENU_ITEM_HEIGHT, subView.width, subView.height)];
     [self addSubview:self.mainContentView];

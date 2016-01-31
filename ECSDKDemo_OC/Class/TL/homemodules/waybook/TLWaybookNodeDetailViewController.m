@@ -26,19 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSDictionary *param = @{@"dto":itemData,@"user":detailDto.user};
-    
-//    @property(nonatomic,copy) NSString *travelId;
-//    @property(nonatomic,copy) NSString *cityId;
-//    @property(nonatomic,copy) NSString *cityName;
-//    @property(nonatomic,copy) NSString *title;
-//    @property(nonatomic,copy) NSString *createTime;
-//    @property(nonatomic,copy) NSString *viewCount;
-//    @property(nonatomic,copy) NSString *commentCount;
-//    @property(nonatomic,copy) NSString *collectCount;
-//    @property(nonatomic,copy) NSString *content;
-//    @property(nonatomic,copy) NSArray<TLImageDTO> *images;
-//    @property(nonatomic,copy) TLTripUserDTO *user;
     
     nodeData = [self.itemData valueForKey:@"dto"];
     TLWayBookDetailDTO *wayBookDetail = [self.itemData valueForKey:@"detailDto"];
@@ -76,10 +63,6 @@
     self.navBackItemHidden = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(void)deleteAction{
     TLAddTripRequestDTO *tripRequestDTO = [[TLAddTripRequestDTO alloc] init];

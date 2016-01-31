@@ -20,7 +20,7 @@
         [self loadErrorImage];
         
         __block UIImage *currentImage = self.image;
-        
+
 //        if (!activityIndicator) {
 //            activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 //            if (self.width ==0 || self.height == 0) {
@@ -67,7 +67,7 @@
                                    self.image = DOWNLOAD_ERROR_IMAGE;
                                }
                            }else{
-                               self.contentMode = UIViewContentModeScaleToFill;
+                               self.contentMode = UIViewContentModeScaleAspectFit;
                                self.image = image;
                            }
                            completedBlock(image,error,cacheType,imageURL);
@@ -127,7 +127,7 @@
                                    self.image = (placeholder ? placeholder : DOWNLOAD_ERROR_IMAGE);
                                }
                            }else{
-                               self.contentMode = UIViewContentModeScaleToFill;
+                               self.contentMode = UIViewContentModeScaleAspectFit;
                                self.image = image;
                            }
                        }];
@@ -184,7 +184,7 @@
                                    self.image = DOWNLOAD_ERROR_IMAGE;
                                }
                            }else{
-                               self.contentMode = UIViewContentModeScaleToFill;
+                               self.contentMode = UIViewContentModeScaleAspectFit;
                                self.image = image;
                                [UIView animateWithDuration:0.3 animations:^{
                                    self.frame = CGRectMake(0,([UIScreen mainScreen].bounds.size.height-image.size.height*[UIScreen mainScreen].bounds.size.width/image.size.width)/2, [UIScreen mainScreen].bounds.size.width, image.size.height*[UIScreen mainScreen].bounds.size.width/image.size.width);

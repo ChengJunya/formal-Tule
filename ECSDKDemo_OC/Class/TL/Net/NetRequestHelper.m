@@ -45,9 +45,9 @@
 
         
         if (0 != error.code) {
-            ZXLog(@"Json Convert Error: %@", error);
+            CYLog(@"Json Convert Error: %@", error);
         }
-        ZXLog(@"Response JsonModel: %@", jsonModel);
+        CYLog(@"Response JsonModel: %@", jsonModel);
         
         self.succeedBlock(jsonModel);
         

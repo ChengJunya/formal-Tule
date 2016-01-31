@@ -18,9 +18,7 @@
         [self setBackgroundColor:[UIColor clearColor]];
         _columnCount = 4;
         _rowCount = 2;
-        
-        //self.layer.borderColor = [UIColor orangeColor].CGColor;
-        //self.layer.borderWidth = 0.5f;
+
     }
     return self;
 }
@@ -65,7 +63,7 @@
     [scroll setContentSize:CGSizeMake(CGRectGetWidth(frame), self.contentHeight)];
     
     NSUInteger hLineCount = _rowCount-1;//menuCount%_columnCount==0?menuCount/_columnCount: menuCount/_columnCount+1;
-    for (int i=0; i<hLineCount; i++) {
+    for (int i=0; i < hLineCount; i++) {
         
         
         UIImage *hImage = [[UIImage imageNamed:@"horizontalLine"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0];
@@ -77,7 +75,7 @@
     
     
     
-    for (int i=0; i<(_columnCount-1); i++) {
+    for (int i=0; i < (_columnCount - 1); i++) {
         UIImage *vImage = [[UIImage imageNamed:@"verticalLine"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:120.0];
         UIImageView *verticalLineOneImageView = [[UIImageView alloc] initWithImage:vImage];
         [verticalLineOneImageView setFrame:CGRectMake((i+1)*(MENU_ITEM_GAP+self.itemWidth+MENU_ITEM_GAP), MENU_ITEM_GAP, 2.0f, self.contentHeight-MENU_ITEM_GAP*2)];
@@ -87,21 +85,16 @@
     
     [self.menuData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        NSUInteger columnIndex = idx%_columnCount;//0-1列 1-2列 2-3列
-        NSUInteger rowIndex = idx/_columnCount;//0-1行
+        NSUInteger columnIndex = idx % _columnCount;//0-1列 1-2列 2-3列
+        NSUInteger rowIndex = idx / _columnCount;//0-1行
         
         NSString *menuName = [obj valueForKey:@"NAME"];
         
-        
-        
-        
+
         UIButton *itemBtn = [[UIButton alloc] initWithFrame:CGRectMake(MENU_ITEM_GAP+(self.itemWidth+MENU_ITEM_GAP*2)*columnIndex, MENU_ITEM_GAP+(self.itemHeight+MENU_ITEM_GAP*2)*rowIndex, self.itemWidth, self.itemHeight)];
         [scroll addSubview:itemBtn];
         [itemBtn addTarget:self action:@selector(onItemSelectHandler:) forControlEvents:UIControlEventTouchUpInside];
-        //itemBtn.layer.borderColor = [UIColor orangeColor].CGColor;
-        //itemBtn.layer.borderWidth = 0.5f;
-        
-        
+
         CGRect imageFrame = CGRectMake((self.itemWidth-imageWidth)/2,(self.itemHeight-imageHight-menuNameSize.height)/2,imageWidth,imageHight);
         
         NSString *iconName = [obj valueForKey:@"IMG"];
@@ -110,10 +103,7 @@
         [imageBtn setTag:idx];
         [imageBtn addTarget:self action:@selector(onItemSelectHandler:) forControlEvents:UIControlEventTouchUpInside];
         [itemBtn addSubview:imageBtn];
-        
-        
 
-        
         UILabel *menuNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.f, CGRectGetMaxY(imageFrame), self.itemWidth, menuNameSize.height)];
         menuNameLabel.text = menuName;
         menuNameLabel.font = FONT_14B;
@@ -128,7 +118,7 @@
 
 -(void)onItemSelectHandler:(UIButton *)btn{
     
-    if([self.delegate respondsToSelector:@selector(itemClick:)] == YES )
+    if([self.delegate respondsToSelector:@selector(itemClick:)])
     {
         NSDictionary *itemData = [self.menuData objectAtIndex:btn.tag];
         [self.delegate itemClick:itemData];

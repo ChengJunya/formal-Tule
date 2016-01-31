@@ -9,7 +9,6 @@
 #import "LoginViewController.h"
 #import "ECDeviceHeaders.h"
 #import "LoginSelectViewController.h"
-
 #import "CommonTools.h"
 #import "GDataXMLParser.h"
 #import "DemoGlobalClass.h"

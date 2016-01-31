@@ -23,12 +23,7 @@
     animationView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:animationView];
     NSString *chatBgImageName = [GUserDefault valueForKey:WAITING_BG_IMAGE_NAME];
-//    if (chatBgImageName.length>0) {
-//        self.view.backgroundColor = [UIColor colorWithPatternImage:[self getImageByfileName:chatBgImageName]];
-//    }else{
-//        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ico_loading_logo_1x1.jpg"]];
-//    }
-    
+
     UIImage *bgImage;
     if (chatBgImageName.length>0) {
         bgImage = [self getImageByfileName:chatBgImageName];

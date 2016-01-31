@@ -1,0 +1,80 @@
+PODS:
+  - AKSegmentedControl (1.0.4)
+  - Bugtags (1.1.7)
+  - CRToast (0.0.9)
+  - CustomActionsheet (0.1.1)
+  - CWPopup (1.2.6)
+  - DACircularProgress (2.3.1)
+  - ImagePlayerView (1.1.2)
+  - IQKeyboardManager (3.3.6)
+  - JSONModel (1.2.0)
+  - KVNMaskedPageControl (0.1.0)
+  - MBProgressHUD (0.9.2)
+  - MJExtension (3.0.10)
+  - MJRefresh (3.1.0)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
+  - MWPhotoBrowser (2.1.1):
+    - DACircularProgress (~> 2.3)
+    - MBProgressHUD (~> 0.9)
+    - SDWebImage (!= 3.7.2, ~> 3.7)
+  - PEPhotoCropEditor (1.3.1)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - TOWebViewController (2.2.3):
+    - TOWebViewController/Core (= 2.2.3)
+  - TOWebViewController/Core (2.2.3)
+  - UMengSocial (4.4)
+
+DEPENDENCIES:
+  - AKSegmentedControl
+  - Bugtags
+  - CRToast (~> 0.0.7)
+  - CustomActionsheet
+  - CWPopup (~> 1.2.4)
+  - ImagePlayerView
+  - IQKeyboardManager
+  - JSONModel
+  - KVNMaskedPageControl
+  - MBProgressHUD (~> 0.9.2)
+  - MJExtension
+  - MJRefresh
+  - MMDrawerController (~> 0.5.7)
+  - MWPhotoBrowser
+  - PEPhotoCropEditor
+  - TOWebViewController
+  - UMengSocial (~> 4.3)
+
+SPEC CHECKSUMS:
+  AKSegmentedControl: c076491ef773c0d70b70d03a8e5a0c04a9efbf08
+  Bugtags: 5522fa54c5a4db1d45a3fff3dd9def69e7172ee1
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  CustomActionsheet: 7202fa4fb0f607f70c8f52445ac94d06380b609d
+  CWPopup: 3f8b0704a9914813d90372d66525d31f24b27d49
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  ImagePlayerView: 127c82f198721aa7bcad57f87598cd125043aa84
+  IQKeyboardManager: 037cf3aec1d0a045108859a47818714eb1bfc149
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  KVNMaskedPageControl: 63ae4dec0fa9d307731037b9831af0256d6db96e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
+  MWPhotoBrowser: ba0d0c09ffda3a7ea10093518738c502c1c7141c
+  PEPhotoCropEditor: 613292fce009efd085e7aed975f1ebb3fec8bb7b
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  TOWebViewController: ca47b9aeefe66acb3353d197dc8270338540b116
+  UMengSocial: aba7296602310385114d82c255539a7bef3b7ab0
+
+COCOAPODS: 0.39.0

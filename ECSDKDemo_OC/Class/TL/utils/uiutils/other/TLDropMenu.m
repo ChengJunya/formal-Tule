@@ -29,7 +29,7 @@
         _menuData = menuData;
         _btnArray = [[NSMutableArray alloc] init];
         [self setUpView];
-        //[self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)]];
+ 
         
     }
     return self;
@@ -124,13 +124,9 @@
                 self.frame = newFrame;
 
             } completion:^(BOOL finished) {
-                //self.hidden = YES;
+               
             }];
         }];
-        
-//        if (self.ItemSelectedBlock) {
-//            self.ItemSelectedBlock(self.selectedItem);
-//        }
         
     }else{
          CGRect newFrame = CGRectMake(self.x, self.y, CGRectGetWidth(self.frame), _frameHeight) ;

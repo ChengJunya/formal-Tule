@@ -192,11 +192,11 @@ static CGFloat NETHTTP_OPERATION_TIMEOUT = 120.f; //网络超时时间
 - (NSURLSessionDataTask*)post:(NetMappingModel*)adapter andObject:(RequestDTO*)requestDTO requestHelper:(__weak NetRequestHelper*)requestHelper onCompletion:(Bool_Block)compBlock
 {
     NSURLSessionDataTask *task = [self POST:adapter.pathPattern parameters:[requestDTO paramter] success:^(NSURLSessionDataTask *task, id responseObject) {
-        ZXLog(@"NetHttpClient:requestByType succeed: %@", responseObject);
+        CYLog(@"城市请求数据--------------------------NetHttpClient:requestByType succeed: %@", responseObject);
         compBlock([requestHelper requestSucceed:responseObject]);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        ZXLog(@"NetHttpClient:requestByType failed: %@", error);
+        CYLog(@"城市请求数据--------------------------NetHttpClient:requestByType failed: %@", error);
         //网络超时处理
         if (error.code == kCFURLErrorTimedOut)
         {

@@ -10,7 +10,7 @@
 #import "NSString+Json.h"
 
 @implementation RequestDTO
-
+#warning -------- 城市请求拼接参数
 - (NSDictionary*)paramter
 {
     /* 方法1：某些情况下转化会有问题

@@ -28,7 +28,7 @@ ZX_IMPLEMENT_SINGLETON(TLHomeHelper)
 
 - (void)getHomeImageList:(NSString*)height width:(NSString*)width requestArr:(__weak NSMutableArray*)requestArr block:(DataHelper_Block)block{
     
-    if (self.homeImageDataArray!=nil&&self.homeImageDataArray.count>0) {
+    if (self.homeImageDataArray!=nil && self.homeImageDataArray.count>0) {
         block(self.homeImageDataArray, YES);
         return;
     }

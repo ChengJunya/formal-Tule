@@ -31,7 +31,7 @@
 #import "UMSocialQQHandler.h"
 #import "TLModuleDataHelper.h"
 
-
+#import <Bugtags/Bugtags.h>
 @interface AppDelegate ()<BPushDelegate>
 @property (nonatomic, strong) LoginViewController *loginView;
 @property (nonatomic, strong) MainViewController *mainView;
@@ -115,8 +115,10 @@
         [BPush handleNotification:userInfo];
     }
     
-    
-    
+    // bugTags
+    [Bugtags startWithAppKey:@"2e38bdab09f73c655c6936764f3a6f42" invocationEvent:BTGInvocationEventBubble];
+    return YES;
+
     
     return YES;
 }

@@ -71,10 +71,7 @@
     TLDropMenu *sortItemMenu = [[TLDropMenu alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame),80.0f) menuData:sortMenuItemsArray];
     
     NSArray *carTypeMenuItemsArray = [[GUserDataHelper keyValueDic] objectForKey:@"goodsType"];
-//    @[@{@"ID":@"1",@"NAME":@"全部"},
-//                                        @{@"ID":@"2",@"NAME":@"餐饮"},
-//                                        @{@"ID":@"3",@"NAME":@"住宿"},
-//                                        @{@"ID":@"4",@"NAME":@"娱乐"}];
+
     TLDropMenu *carTypeItemMenu = [[TLDropMenu alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame),80.0f) menuData:carTypeMenuItemsArray];
     carTypeItemMenu.ItemSelectedBlock = ^(id itemData){
         [weakSelf carTypeSortChange:itemData];

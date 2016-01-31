@@ -14,10 +14,7 @@
 #import "RImageBtn.h"
 @implementation BoncDataGridCell
 @synthesize CheckBoxBlock=_CheckBoxBlock,DeleteItemBlock=_DeleteItemBlock;
-- (void)awakeFromNib {
-    // Initialization code
-    NSLog(@"awakeFromNib");
-}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self =  [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
@@ -102,11 +99,7 @@
         }
     }];
     
-    
-    
 }
-
-
 
 //渲染内部视图
 - (void)initContent{

@@ -1,0 +1,6 @@
+framework module KVNMaskedPageControl {
+  umbrella header "KVNMaskedPageControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -133,12 +133,6 @@
     tripDetailEntity.createTime = _detailDto.createTime;
     tripDetailEntity.carDesc = _detailDto.carDesc;
     
-    
-    
-
-
-
-
 
     tripDetailEntity.carMaker = _detailDto.carMaker;
     tripDetailEntity.carBrand = _detailDto.carBrand;

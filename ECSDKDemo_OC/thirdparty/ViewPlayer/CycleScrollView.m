@@ -52,7 +52,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         self.autoresizesSubviews = YES;
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         self.scrollView.autoresizingMask = 0xFF;
@@ -69,13 +68,11 @@
 
 -(void)createPageControler{
     float pageControlHeight = 18.0;
-    //NSUInteger pageCount = self.contentViews.count;
     CGRect pageViewRect = [self bounds];
     pageViewRect.size.height = pageControlHeight;
     pageViewRect.origin.y = self.scrollView.frame.size.height-pageControlHeight;
     
     self.myPageControl = [[GrayPageControl alloc] initWithFrame:pageViewRect];
-    //    self.myPageControl.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.2];
     self.myPageControl.numberOfPages = _totalPageCount;
     self.myPageControl.currentPage = 0;
     [self addSubview:self.myPageControl];
@@ -133,9 +130,7 @@
         [self.scrollView addSubview:contentView];
     }
     [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
-    
-    
-    //self.myPageControl.numberOfPages = [self.contentViews count];
+
     
 }
 
@@ -168,8 +163,6 @@
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.frame),CGRectGetHeight(self.scrollView.frame));
     [_scrollView setContentOffset:CGPointMake(0, 0)];
     
-    
-    //self.myPageControl.numberOfPages = [self.contentViews count];
     [self.animationTimer pauseTimer];
 }
 
@@ -224,12 +217,12 @@
     int contentOffsetX = scrollView.contentOffset.x;
     if(contentOffsetX >= (2 * CGRectGetWidth(scrollView.frame))) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
-//        NSLog(@"next，当前页:%ld",self.currentPageIndex);
+
         [self configContentViews];
     }
     if(contentOffsetX <= 0) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex - 1];
-//        NSLog(@"previous，当前页:%ld",self.currentPageIndex);
+
         [self configContentViews];
     }
     
@@ -248,7 +241,6 @@
 - (void)animationTimerDidFired:(NSTimer *)timer
 {
     CGPoint newOffset = CGPointMake(self.scrollView.contentOffset.x + CGRectGetWidth(self.scrollView.frame), self.scrollView.contentOffset.y);
-//    NSLog(@"%f  %f",newOffset.x,newOffset.y);
     
     if (newOffset.x>=2 * CGRectGetWidth(self.scrollView.frame)) {
         newOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame)*2, self.scrollView.contentOffset.y);
@@ -265,14 +257,6 @@
     }
 }
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
 
 @end
 
@@ -283,15 +267,12 @@
 -(id) initWithFrame:(CGRect)frame
 
 {
-    
     self = [super initWithFrame:frame];
-    
-    
+
     activeImage = [UIImage imageNamed:@"ico_jdt1"];
     
     inactiveImage = [UIImage imageNamed:@"ico_jdt2"];
-    
-    
+
     return self;
     
 }

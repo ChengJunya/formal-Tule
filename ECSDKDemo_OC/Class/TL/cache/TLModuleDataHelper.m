@@ -146,20 +146,18 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
     return self;
 }
 
-
-
 /*
  *已发表攻略,路书，游记列表查询 分页获取
  @param orderByTime 是否按照时间顺序
   @param orderByViewCount 是否热度
   @param cityId 地市id
-  @param type   类型//1-攻略 2-路数 3-游记
+  @param type   类型//1-攻略 2-路书 3-游记
  */
 - (void)getTripList:(TLTripListRequestDTO*)tripRequestDto requestArr:(__weak NSMutableArray*)requestArr block:(DataHelper_Block_Page)block;{
     
-    NSLog(@"TripList---------------------------------:%@",tripRequestDto.dataType);
+      
     if (tripRequestDto.dataType.integerValue == 5) {
-        if (tripRequestDto.currentPage.integerValue>1) {
+        if (tripRequestDto.currentPage.integerValue > 1) {
             block([NSArray array], YES, 1);
             return;
         }
@@ -173,9 +171,7 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
         }else{
             orderBy = @"createTime";
         }
-        
-        
-        
+
         NSPredicate *ca;
 
         if (tripRequestDto.cityId.length>0) {
@@ -183,11 +179,7 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
         }else{
             ca = [NSPredicate predicateWithFormat:@"type == %@",tripRequestDto.type];
         }
-        
-        
-        
-        
-        
+
         NSArray *tlTripDataArray = [TLTripDataEntity MR_findAllSortedBy:orderBy ascending:YES withPredicate:ca];
         
         NSMutableArray *tripArray = [NSMutableArray array];
@@ -221,17 +213,9 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
             }];
             
             tripDataEndity.travel = (NSArray<TLTripTravelDTO>*)travelArray;
-            
-            
-            
-            
-            
+
             [tripArray addObject:tripDataEndity];
-            
-            
-            
-            
-            
+
         }];
         
         block(tripArray, YES, [tripRequestDto.currentPage intValue]);
@@ -254,9 +238,7 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
         }
     }];
     [requestArr addObject:requestTag];
-    
-    
-    
+
 }
 
 
@@ -264,9 +246,6 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
  * 刷新获取
  */
 - (void)getMyTripList:(TLTripListRequestDTO*)tripRequestDto requestArr:(__weak NSMutableArray*)requestArr block:(DataHelper_Block_Page)block{
-
-
-    
     
     //返回请求标记tag
     NSNumber *requestTag = [GDataManager asyncRequestByType:NetAdapter_MyTripList andObject:tripRequestDto success:^(TLTripListResponseDTO* responseDTO) {
@@ -296,6 +275,7 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
     }];
     [requestArr addObject:requestTag];
 }
+
 /*
  *路书节点录入
  */
@@ -383,7 +363,7 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
 - (void)getWayBookDetail:(TLWayBookDetailRequestDTO*)requestDTO requestArray:(__weak NSMutableArray*)requestArr block:(DataHelper_Block)block{
     //请求数据对象
     
-    if (requestDTO.dataType.integerValue==5) {
+    if (requestDTO.dataType.integerValue == 5) {
 
            TLTripDetailEntity *detailDto = [TLTripDetailEntity MR_findFirstByAttribute:@"travelId" withValue:requestDTO.travelId];
         
@@ -1458,7 +1438,6 @@ ZX_IMPLEMENT_SINGLETON(TLModuleDataHelper)
  *汽车租赁列表 listCarRent
  */
 - (void)getStoreList:(TLListMerchantRequestDTO*)request requestArray:(__weak NSMutableArray*)requestArr block:(DataHelper_Block_Page)block{
-    NSLog(@"StoreList---------------------------------:%@",request.dataType);
     
     
     if(request.dataType.integerValue==5){

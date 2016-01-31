@@ -23,18 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
     self.useBlurForPopup = YES;
 
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 -(void)itemSelected:(NSDictionary *)itemData{
@@ -43,16 +33,10 @@
         obj.dataType = [self.itemData valueForKey:@"DATATYPE"];
         obj.type = @"2";
     }];
-    
-    
 }
 
 -(void)addCreateActionBtnHandler{
     WEAK_SELF(self);
-//    [self pushViewControllerWithName:@"TLNewWayBookViewController" block:^(id obj) {
-//        
-//    }];
-    
     TLSelectWaybookViewController *selectWaybookVC = [[TLSelectWaybookViewController alloc] initWIthType:@"2"];
 
     selectWaybookVC.NewItemSelectedBlock = ^(id itemData){
@@ -81,8 +65,6 @@
         }
         
     };
-    
-    
     selectWaybookVC.ItemSelectedBlock = ^(id itemData){
         [self dismissPopup];
         [weakSelf pushViewControllerWithName:@"TLNewWaybookNodeViewController" itemData:itemData block:^(TLNewWaybookNodeViewController* obj) {
@@ -90,29 +72,25 @@
             obj.type = @"2";
         }];
     };
-    
-    
     [self presentPopupViewController:selectWaybookVC animated:YES completion:^{
         
     }];
-    
-    
 }
 
 -(void)initData{
     self.refrashTime = [RUtiles stringFromDateWithFormat:[NSDate new] format:@"yyyyMMddHHmmss"];
     self.currentPage = 1;
     TLTripListRequestDTO *request = [[TLTripListRequestDTO alloc] init];
-    
+
     request.currentPage = [NSString stringWithFormat:@"%d",self.currentPage];
     request.pageSize = [NSString stringWithFormat:@"%d",TABLE_PAGE_SIZE];
     request.orderByTime = self.orderByTime;
     request.orderByViewCount = self.orderByViewCount;
     request.cityId = self.cityId;
-    request.type = MODULE_WAYBOOK_TYPE;
+    request.type = MODULE_STRATEGY_TYPE;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.currentTime = self.refrashTime;
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.orderBy = self.sortId;
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getTripList:request requestArr:self.requestArray block:^(id obj, BOOL ret, int pageNumber) {
@@ -128,9 +106,10 @@
             [self.listAssistView setRetryWithTarget:self action:@selector(initData)];
         }
     }];
-    
-    
 }
+
+
+
 
 -(void)refreshData{
     TLTripListRequestDTO *request = [[TLTripListRequestDTO alloc] init];
@@ -141,7 +120,7 @@
     request.cityId = self.cityId;
     request.type = MODULE_WAYBOOK_TYPE;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.currentTime = self.refrashTime;
     request.orderBy = self.sortId;
     
@@ -160,10 +139,6 @@
         }
     }];
 }
-
-
-
-
 
 - (void)dismissPopup {
     if (self.popupViewController != nil) {

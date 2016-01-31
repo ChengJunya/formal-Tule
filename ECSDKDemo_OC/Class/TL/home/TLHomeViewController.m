@@ -26,10 +26,10 @@
 //#define MENU_HEIGHT 180.f
 #define HW_VALUE 1.3
 @interface TLHomeViewController ()<CMenuViewDelegate>{
-    CGFloat imageViewHeight;
-    CGFloat menuHeight;
-        CycleScrollView *_cycleScrollView;
-    UIImageView *emptyImageView;
+    CGFloat _imageViewHeight;
+    CGFloat _menuHeight;
+    CycleScrollView *_cycleScrollView;
+    UIImageView *_emptyImageView;
 }
 @property (nonatomic,strong) ImagePlayerView *imagePlayerView;
 @property (nonatomic,strong) NSArray *imageURLs;
@@ -44,8 +44,8 @@
     [super viewDidLoad];
     
     self.title = @"途乐";
-    imageViewHeight = self.view.width/HW_VALUE;
-    menuHeight = self.view.height-STATUSBAR_HEIGHT-NAVIGATIONBAR_HEIGHT-TABBAR_HEIGHT-imageViewHeight;
+    _imageViewHeight = self.view.width/HW_VALUE;
+    _menuHeight = self.view.height-STATUSBAR_HEIGHT-NAVIGATIONBAR_HEIGHT-TABBAR_HEIGHT-_imageViewHeight;
     [self addAllUIResources];
     [self getHomeImageData];
     
@@ -61,22 +61,15 @@
     self.navBarHidden = NO;
     self.searchBtnHidden = NO;
     self.listBtnHidden = NO;
-    
+    //
     [self resumeAutoScrollAnim];
 }
-
-
-
 
 -(void)viewWillDisappear:(BOOL)animated{
     [self stopAutoScrollAnim];
 }
 
-
-
-#pragma mark -
 #pragma mark - public tools
-
 - (void)resumeAutoScrollAnim {
     [_cycleScrollView resumeAutoScrollAnim];
 }
@@ -90,52 +83,42 @@
  *
  *  @param isLocalData 是否是本地图片
  */
-
-
 - (void)initBannerImageViewArr {
     self.bannerImageViewArr = [NSMutableArray array];
-    if (emptyImageView!=nil) {
-        [emptyImageView removeFromSuperview];
+    if (_emptyImageView != nil) {
+        [_emptyImageView removeFromSuperview];
     }
-    if (self.imageURLs.count==0) {
-        emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.width ,imageViewHeight)];
-        emptyImageView.userInteractionEnabled = YES;
-        emptyImageView.image = [UIImage imageNamed:@"ico_loading_logo_1x2.jpg"];
-        emptyImageView.contentMode = UIViewContentModeScaleToFill;
-        [self.bannerImageViewArr addObject:emptyImageView];
+    if (self.imageURLs.count == 0) {
+        _emptyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width ,_imageViewHeight)];
+        _emptyImageView.userInteractionEnabled = YES;
+        _emptyImageView.image = [UIImage imageNamed:@"ico_loading_logo_1x2"];
+        _emptyImageView.contentMode =  UIViewContentModeScaleAspectFit;
+        [self.bannerImageViewArr addObject:_emptyImageView];
     }else{
         [self.imageURLs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             TLHomeImageDTO *bannerInfo = obj;
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f,  self.view.width, imageViewHeight)];
-            imageView.userInteractionEnabled = YES;
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,  self.view.width, _imageViewHeight)];
+            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            imageView.userInteractionEnabled = YES; 
             NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,bannerInfo.imageUrl];
-            NSLog(@"首页图片%d：%@",idx,imageUrl);
             [imageView setZXImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
-            //imageView.defContentMode = @(UIViewContentModeScaleToFill);
-            imageView.contentMode = UIViewContentModeScaleToFill;
             [self.bannerImageViewArr addObject:imageView];
         }];
     }
     [self addImageBanner];
 }
 
-
 /**
  *  通过index获取视图，如果是两个视图就特殊处理，每次都重新创建
- *
- *  @param index <#index description#>
- *
- *  @return <#return value description#>
  */
 -(UIView*)getBannerViewByIndex:(NSInteger)index{
-    if (2 == self.imageURLs.count) {
+    if (self.imageURLs.count == 2) {
         TLHomeImageDTO *info = self.imageURLs[index];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f,  self.view.width, imageViewHeight)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f,  self.view.width, _imageViewHeight)];
         imageView.userInteractionEnabled = YES;
         NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,info.imageUrl];
         [imageView setZXImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
-        //imageView.defContentMode = @(UIViewContentModeScaleToFill);
-        imageView.contentMode = UIViewContentModeScaleToFill;
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         return imageView;
     }else{
         return self.bannerImageViewArr[index];
@@ -149,24 +132,17 @@
 
 #pragma mark -
 #pragma mark - 获取数据
-
-
-
 -(void)getHomeImageData{
-    NSString *imageHeight = [NSString stringWithFormat:@"%f",imageViewHeight];
-    NSString *imageWidth = [NSString stringWithFormat:@"%f",self.view.width];
-    
-   
+    //改变首页图片的分辨率
+    NSString *imageHeight = [NSString stringWithFormat:@"%f",_imageViewHeight * 3];
+    NSString *imageWidth = [NSString stringWithFormat:@"%f",self.view.width * 3];
+
     WEAK_SELF(self);
     [GTLHomeHelper getHomeImageList:imageHeight width:imageWidth requestArr:self.requestArray block:^(id obj, BOOL ret) {
-   
-
         if (ret) {
             NSArray *list = obj;
             self.imageURLs = list;
             [weakSelf initBannerImageViewArr];
-           
-            
         }else{
             ResponseDTO *response = obj;
             [GHUDAlertUtils toggleMessage:response.resultDesc];
@@ -177,13 +153,9 @@
 #pragma mark -
 #pragma mark - ui
 
-
 - (void)addAllUIResources
 {
-
-    //[self addImageBanner];
     [self addMenuView];
-
 }
 
 
@@ -194,7 +166,7 @@
     if (_cycleScrollView!=nil) {
         [_cycleScrollView removeFromSuperview];
     }
-    _cycleScrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0.f ,NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT,CGRectGetWidth(self.view.frame) , imageViewHeight) animationDuration:4.f];
+    _cycleScrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0.f ,NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT,CGRectGetWidth(self.view.frame) , _imageViewHeight) animationDuration:4.f];
     [self.view addSubview:_cycleScrollView];
     
     WEAK_SELF(self);
@@ -210,51 +182,41 @@
 }
 
 
-
-
-
 /**
  *  添加首页菜单
  */
 -(void)addMenuView{
-    CMenuView *menuView = [[CMenuView alloc] initWithFrame:CGRectMake(0.0, NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT+imageViewHeight, CGRectGetWidth(self.view.frame),menuHeight)];
+    CMenuView *menuView = [[CMenuView alloc] initWithFrame:CGRectMake(0.0, NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT+_imageViewHeight, CGRectGetWidth(self.view.frame),_menuHeight)];
     menuView.delegate = self;
     menuView.alpha = 1;
     [self.view addSubview:menuView];
     NSString *loginId = @"";//GUserDataHelper.loginInfo.loginId;
-    [menuView randerViewWithData:@[@{@"ID":@"1",@"NAME":@"攻略",@"IMG":@"menu1_homepage",@"VCNAME":@"TLStrategyListViewController",@"TYPE":@"1",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"2",@"NAME":@"路书",@"IMG":@"menu2_homepage",@"VCNAME":@"TLWayBookListViewController",@"TYPE":@"2",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"3",@"NAME":@"游记",@"IMG":@"menu3_homepage",@"VCNAME":@"TLTripNoteListViewController",@"TYPE":@"3",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"4",@"NAME":@"活动",@"IMG":@"menu4_homepage",@"VCNAME":@"TLGroupActivityListViewController",@"TYPE":@"4",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"5",@"NAME":@"车讯",@"IMG":@"menu5_homepage",@"VCNAME":@"TLCarMainListViewController",@"TYPE":@"5",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"6",@"NAME":@"跳蚤",@"IMG":@"menu6_homepage",@"VCNAME":@"TLSecondPlatformViewController",@"TYPE":@"6",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"8",@"NAME":@"商家",@"IMG":@"menu8_homepage",@"VCNAME":@"TLStoreListViewController",@"TYPE":@"8",@"DATATYPE":@"1",@"LOGINID":loginId},
-                                   @{@"ID":@"7",@"NAME":@"应急救援",@"IMG":@"menu7_homepage",@"VCNAME":@"TLEmergencyViewController",@"TYPE":@"7",@"DATATYPE":@"1",@"LOGINID":loginId}]];
-    
+    [menuView randerViewWithData:
+               @[@{@"ID":@"1",@"NAME":@"攻略",@"IMG":@"menu1_homepage",@"VCNAME":@"TLStrategyListViewController",@"TYPE":@"1",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"2",@"NAME":@"路书",@"IMG":@"menu2_homepage",@"VCNAME":@"TLWayBookListViewController",@"TYPE":@"2",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"3",@"NAME":@"游记",@"IMG":@"menu3_homepage",@"VCNAME":@"TLTripNoteListViewController",@"TYPE":@"3",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"4",@"NAME":@"活动",@"IMG":@"menu4_homepage",@"VCNAME":@"TLGroupActivityListViewController",@"TYPE":@"4",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"5",@"NAME":@"车讯",@"IMG":@"menu5_homepage",@"VCNAME":@"TLCarMainListViewController",@"TYPE":@"5",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"6",@"NAME":@"跳蚤",@"IMG":@"menu6_homepage",@"VCNAME":@"TLSecondPlatformViewController",@"TYPE":@"6",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"8",@"NAME":@"商家",@"IMG":@"menu8_homepage",@"VCNAME":@"TLStoreListViewController",@"TYPE":@"8",@"DATATYPE":@"1",@"LOGINID":loginId},
+               @{@"ID":@"7",@"NAME":@"应急救援",@"IMG":@"menu7_homepage",@"VCNAME":@"TLEmergencyViewController",@"TYPE":@"7",@"DATATYPE":@"1",@"LOGINID":loginId}]];
+
 }
-
-
 
 /**
  *  添加导航 --  废弃
  */
 -(void)addBanner{
     
-    self.imagePlayerView = [[ImagePlayerView alloc] initWithFrame:CGRectMake(0.f ,NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT,CGRectGetWidth(self.view.frame) , imageViewHeight)];
+    self.imagePlayerView = [[ImagePlayerView alloc] initWithFrame:CGRectMake(0.f ,NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT,CGRectGetWidth(self.view.frame) , _imageViewHeight)];
     [self.view addSubview:self.imagePlayerView];
     
     
 }
 
-
-
 #pragma mark - ImagePlayerViewDelegate
 /**
  *  imagepayer的代理 -- 废弃
- *
- *  @param imagePlayerView <#imagePlayerView description#>
- *  @param imageView       <#imageView description#>
- *  @param index           <#index description#>
  */
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView loadImageForImageView:(UIImageView *)imageView index:(NSInteger)index
 {
@@ -287,8 +249,6 @@
             }];
         }
     }];
-    
-    
 }
 
 /**
@@ -324,13 +284,8 @@
     
 }
 
-
-
 /**
  *  imageplayer点击事件 ---  废弃20150611
- *
- *  @param imagePlayerView <#imagePlayerView description#>
- *  @param index           <#index description#>
  */
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
 {

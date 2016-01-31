@@ -22,18 +22,11 @@
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)itemSelected:(id)itemData{
 
     [self pushViewControllerWithName:@"TLStrategyDetailViewController" itemData:itemData block:^(TLStrategyDetailViewController *obj) {
         obj.dataType = [self.itemData valueForKey:@"DATATYPE"];
     }];
-    
-    
 }
 
 -(void)addCreateActionBtnHandler{
@@ -41,9 +34,6 @@
         obj.operateType = @"1";//新增
     }];
 }
-
-
-
 
 -(void)initData{
     self.refrashTime = [RUtiles stringFromDateWithFormat:[NSDate new] format:@"yyyyMMddHHmmss"];
@@ -58,7 +48,7 @@
     request.type = MODULE_STRATEGY_TYPE;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
     request.currentTime = self.refrashTime;
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.orderBy = self.sortId;
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getTripList:request requestArr:self.requestArray block:^(id obj, BOOL ret, int pageNumber) {
@@ -74,8 +64,6 @@
             [self.listAssistView setRetryWithTarget:self action:@selector(initData)];
         }
     }];
-    
-   
 }
 
 -(void)refreshData{
@@ -87,7 +75,7 @@
     request.cityId = self.cityId;
     request.type = MODULE_STRATEGY_TYPE;
     request.dataType = [self.itemData valueForKey:@"DATATYPE"];
-        request.loginId = [self.itemData valueForKey:@"LOGINID"];
+    request.loginId = [self.itemData valueForKey:@"LOGINID"];
     request.currentTime = self.refrashTime;
     request.orderBy = self.sortId;
     [GHUDAlertUtils toggleLoadingInView:self.view];

@@ -40,7 +40,6 @@
 @end
 
 
-////////
 @interface GrayPageControl : UIPageControl
 
 {

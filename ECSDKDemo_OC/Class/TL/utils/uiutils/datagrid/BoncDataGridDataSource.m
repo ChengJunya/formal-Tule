@@ -55,27 +55,16 @@
         self.tableView = tableView;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        
-        
-
-        
         self.itemData = itemData;
         
         NSArray *gridDataArray = [self.itemData valueForKey:@"GRID_DATA"];
         self.gridData = [NSMutableArray arrayWithArray: gridDataArray];
         
         self.sections = [self.itemData valueForKey:@"SECTION_DATA"];
-        
-        
-        
-        
-        
-        
-        
+
         if ([@"0" isEqualToString:[self.itemData valueForKey:@"isShowHeader"]]) {
             
         }else{
-            
             //如果
             if ([@"1" isEqualToString:[self.itemData valueForKey:@"isShowColumnSelecter"]]) {
                 NSString *headerHeightStr = [self.headerData valueForKey:@"headerHeight"]?[self.headerData valueForKey:@"headerHeight"]:GRID_HEADER_HEIGHT;
@@ -83,7 +72,7 @@
                 NSArray *headerData = [self.headerData valueForKey:@"header"];
                 self.columnSelectView = [[BoncColumnSelectView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.tableView.frame)-BoncColumnSelectView_WIDTH, [headerHeightStr floatValue], BoncColumnSelectView_WIDTH, [headerData count]*BoncColumnSelectItemTableViewCell_HEIGHT) columnData:headerData];
                 self.columnSelectView.delegate = self;
-                //[self.tableView addSubview:self.columnSelectView];
+
                 self.isColumnSelectViewHidden = YES;
                 
                 UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
@@ -92,11 +81,7 @@
                 //将触摸事件添加到当前view
                 [self.tableView addGestureRecognizer:tapGestureRecognizer];
             }
-            
-        
         }
-        
-        
     }
     return self;
 }
@@ -110,23 +95,10 @@
     if(!self.isColumnSelectViewHidden){
         [self isShowSelectColumnBtnSelected:YES];
     }
-    
-
 }
--(instancetype)init{
-    self = [super init];
-    if (self) {
-        
-        
-    }
-    return self;
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-   
-
     id cellData = [[self.gridData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     NSString *cellType = [[self.sections objectAtIndex:indexPath.section] valueForKey:@"CELL_TYPE"];
      NSString *CellIdentifier = cellType;
@@ -463,6 +435,7 @@
     
     return cell;
 }
+
 -(BasicCellViewTableViewCell*)createTLGroupActivityCell:(NSString*)CellIdentifier tableView:(UITableView*)tableView{
     TLGroupActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -536,6 +509,7 @@
     
     return cell;
 }
+
 //TLUserListCell
 -(BasicCellViewTableViewCell*)createTLUserListCell:(NSString*)CellIdentifier tableView:(UITableView*)tableView{
     TLUserListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -569,28 +543,12 @@
 }
 
 
-/*
- -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
- NSDictionary *sectionItem = [self.sections objectAtIndex:section];
- return [sectionItem objectForKey:@"column1"];
- }
- */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSArray *arrayOfSection = [self.gridData objectAtIndex:section];
     return [arrayOfSection count];
 }
 
-/*
-  -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-  NSDictionary *sectionItem = [self.sections objectAtIndex:section];
-  TableCellHaderView *header = [[TableCellHaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.tableView.frame.size.width, 30.0f)];
-  [header setCoulumn1Label:[sectionItem valueForKey:@"column1"]];
-  [header setCoulumn2Label:[sectionItem valueForKey:@"column2"]];
-  return header;
-  
-  }
-  */
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -627,9 +585,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *tempCellIdentifier = @"TEMP_CELL_ID";
-    //NSDictionary *rowData = [self.gridData objectAtIndex:indexPath.row];
-    //NSString *heightStr = [rowData valueForKey:@"height"];
-    
+
     CGFloat cellHeight = 0.f;
     id cellData = [[self.gridData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     NSString *cellType = [[self.sections objectAtIndex:indexPath.section] valueForKey:@"CELL_TYPE"];
@@ -817,7 +773,7 @@
     }
 }
 
-
+#warning ----------- tableView选择
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
         
@@ -825,7 +781,6 @@
     if (self.ItemSelectedBlock) {
         self.ItemSelectedBlock(rowData);
     }
-    
     
 }
 

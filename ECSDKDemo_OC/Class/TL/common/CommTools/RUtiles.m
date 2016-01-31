@@ -397,6 +397,7 @@
     
 }
 
+#warning ---------- date值得格式
 + (NSString *)stringFromDateWithFormat:(NSDate *)date format:(NSString*)format{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     

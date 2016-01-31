@@ -27,25 +27,21 @@
 @property (nonatomic,strong) BoncDataGridDataSource *tableViewDataSource;
 @property (nonatomic,strong) ZXColorButton *exitBtn;
 @property (nonatomic,assign) CGFloat yOffSet;
-@property (nonatomic,strong) NSString *isHasNewMesage;
 @end
 
 @implementation TLLeftViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isHasNewMesage = @"0";
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor blackColor];
+
+    self.view.backgroundColor = [UIColor grayColor];
+    self.view.alpha = 0.1;
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundImageView.image = [UIImage imageNamed:@"left_bg.png"];
     [self.view addSubview:backgroundImageView];
     backgroundImageView.alpha = 0.3;
-    
-    
+
     [self addAllUIResources];
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -53,22 +49,15 @@
     [self updateUI];
 }
 
-
-
-
-
-
-
-
+/**
+ *  设置各个按钮
+ */
 -(void)addAllUIResources{
-    
-    
     _yOffSet = 100.f;
     
     UIView *leftContentView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, DRAWER_LEFT_WIDTH, CGRectGetHeight(self.view.frame))];
     [self.view addSubview:leftContentView];
-    
-    
+
     [self addMenuList];
     [leftContentView addSubview:self.tableView];
     
@@ -79,7 +68,6 @@
     line.frame = CGRectMake(lineHGap, _yOffSet+20.f, CGRectGetWidth(leftContentView.frame)-lineHGap*2, 1.f);
     [leftContentView.layer addSublayer:line];
     _yOffSet = _yOffSet + 20.f + 1.f;
-    
 
     _exitBtn = [ZXColorButton buttonWithType:EZXBT_SOLID_ORANGE frame:CGRectMake((CGRectGetWidth(leftContentView.frame)-UI_COMM_SHORT_BTN_HEIGHT)/2, _yOffSet+20.f, UI_COMM_SHORT_BTN_HEIGHT, UI_COMM_BTN_HEIGHT) title:MultiLanguage(setvcExitButton) font:FONT_18 block:^{
         
@@ -90,8 +78,6 @@
 }
 
 -(void)logoutUser{
-    
-    
     if(GUserDataHelper.isLoginSucceed){
         [GHUDAlertUtils showZXColorAlert:@"是否退出当前登录？" subTitle:@"" cancleButton:MultiLanguage(comCancel) sureButtonTitle:@"确定" COLORButtonType:0 buttonHeight:40 clickedBlock:^(ZXColorAlert *alert, NSUInteger index) {
             if (index == 1) {
@@ -108,25 +94,17 @@
     }else{
         [RTLHelper gotoLoginViewController];
     }
-    
-    
-    
-    
-    
-    
 }
 
 -(void)updateUI{
     NSString *cellHeight = [NSString stringWithFormat:@"%f",TLeftMenuItemHeight];
     settingMenuList = @[
-//                                 @{@"ID":@"1",@"NAME":@"更新系统",@"IMAGE":@"update",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":RTLHelper.hasNewVersion?@"1":@"0"},
-                                 @{@"ID":@"2",@"NAME":@"系统消息",@"IMAGE":@"message",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":RTLHelper.hasNewSystemMessage?@"1":@"0"},
-                                 @{@"ID":@"3",@"NAME":@"应用分享",@"IMAGE":@"share",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-                                  @{@"ID":@"6",@"NAME":@"应用设置",@"IMAGE":@"left_menu_set",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-                                 @{@"ID":@"4",@"NAME":@"关于我们",@"IMAGE":@"about",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-                                 @{@"ID":@"5",@"NAME":@"清除缓存",@"IMAGE":@"clean",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"}];
-    
-    
+         @{@"ID":@"2",@"NAME":@"系统消息",@"IMAGE":@"message",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":RTLHelper.hasNewSystemMessage?@"1":@"0"},
+         @{@"ID":@"3",@"NAME":@"应用分享",@"IMAGE":@"share",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
+          @{@"ID":@"6",@"NAME":@"应用设置",@"IMAGE":@"left_menu_set",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
+         @{@"ID":@"4",@"NAME":@"关于我们",@"IMAGE":@"about",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
+         @{@"ID":@"5",@"NAME":@"清除缓存",@"IMAGE":@"clean",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"}];
+
     self.tableViewDataSource.sections = @[@{@"SECTION_TYPE":@"1",@"CELL_TYPE": @"LEFT_MENU_LIST_GRID"}];
     NSMutableArray *gridData = [NSMutableArray array];
     [gridData addObject:settingMenuList];
@@ -141,18 +119,7 @@
 }
 
 -(void)addMenuList{
-
-//    NSString *cellHeight = [NSString stringWithFormat:@"%f",TLeftMenuItemHeight];
-//    settingMenuList = @[
-//                        @{@"ID":@"1",@"NAME":@"更新系统",@"IMAGE":@"update",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-//                        @{@"ID":@"2",@"NAME":@"系统消息",@"IMAGE":@"message",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-//                        @{@"ID":@"3",@"NAME":@"应用分享",@"IMAGE":@"share",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"1"},
-//                        @{@"ID":@"4",@"NAME":@"关于我们",@"IMAGE":@"about",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"},
-//                        @{@"ID":@"5",@"NAME":@"清除缓存",@"IMAGE":@"clean",@"height":cellHeight,@"isAction":@"1",@"isShowPoint":@"0"}];
-
-    
-
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, _yOffSet, CGRectGetWidth(self.view.frame), TLeftMenuItemHeight*6)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, _yOffSet, CGRectGetWidth(self.view.frame), TLeftMenuItemHeight * 6)];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
     NSDictionary *itemData = @{
@@ -172,12 +139,10 @@
     };
     
     _yOffSet = _yOffSet+CGRectGetHeight(self.tableView.frame);
-    
-    
+
     [self.tableView reloadData];
 
 }
-
 
 -(void)checkToUpdate:(NSNotification *)notification
 {
@@ -188,11 +153,8 @@
             
             NSString *versionMessage = versionData.result.updateNote;
             versionMessage = [versionMessage stringByReplacingOccurrencesOfString:@"|" withString:@"\n"];
-            
-            
+
             RTLHelper.hasNewVersion = YES;
-            
-            
         }else{
             if (isShowNotice==1) {
                 
@@ -202,25 +164,12 @@
     }];
 }
 
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)itemSelected:(NSDictionary *)itemData{
     NSLog(@"%@",[itemData valueForKey:@"NAME"]);
     
     switch ([[itemData valueForKey:@"ID"] intValue]) {
         case 1:
         {
-//            [GHUDAlertUtils showZXColorAlert:[itemData valueForKey:@"NAME"] subTitle:@"检查到有更新的版本，确定更新吗？" cancleButton:MultiLanguage(comCancel) sureButtonTitle:MultiLanguage(setvcAlertBtnSure) COLORButtonType:0 buttonHeight:40 clickedBlock:^(ZXColorAlert *alert, NSUInteger index) {
-//                if (index == 1) {
-//                    //[GAppversionHelper openAppStoreURL];
-//                }
-//            }];
             [[NSNotificationCenter defaultCenter] postNotificationName:TL_DRAWER_OPEN_LEFT object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHECK_VERSION object:@{@"isShowNotice":@"1"}];
             break;
@@ -243,8 +192,7 @@
             shareDto.shareTitle = @"途乐";//obj.title;
             shareDto.shareImageUrl = @"https://mmbiz.qlogo.cn/mmbiz/8iar9j6LGcQW1SFufDicnDibEFMMmg8VLGMfbB5IDwpgbpONt86vgjeiacWiciaNj2tqsk9uFHeTDT3YiaqCibQVCK9ZibQ/0?wx_fmt=png";//obj.imageUrl;
             shareDto.patAwardId = @"";//obj.patAwardId;
-            
-            
+
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SHARE object:shareDto];
             break;
         }

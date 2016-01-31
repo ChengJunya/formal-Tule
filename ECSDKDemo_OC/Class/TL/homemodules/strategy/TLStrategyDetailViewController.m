@@ -32,23 +32,9 @@
 
 @implementation TLStrategyDetailViewController
 
-
-
 - (void)viewDidLoad {
-    
-    
-    
     [super viewDidLoad];
-    
-    
-    
-    
-
 }
-
-
-
-
 
 -(void)addDetailView{
     
@@ -106,11 +92,6 @@
     [self getDetailData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)downloadAction{
     
     
@@ -165,9 +146,7 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
         [GHUDAlertUtils toggleMessage:@"下载成功"];
     }];
-    
-    
-    
+
 }
 
 -(void)communicateAction{
@@ -217,8 +196,6 @@
     
 }
 
-
-
 -(void)addCollect{
     WEAK_SELF(self);
     TLSaveCollectRequestDTO *requestDTO = [[TLSaveCollectRequestDTO alloc] init];
@@ -265,8 +242,7 @@
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
     nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:nc animated:YES completion:nil];
-    
-    
+
 }
 
 @end

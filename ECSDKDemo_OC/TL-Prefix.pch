@@ -14,4 +14,24 @@
     #import "DemoGlobalClass.h"
     #import "CommDef.h"
     #import "UIViewExt.h"
+    #import "Foundation+Log.m"
+
+/** 获取屏幕高宽 **/
+#define __kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define __kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+
+#ifdef DEBUG // 处于开发阶段
+#define CYLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define CYLog(...)
+#endif
+
+
+// RGB颜色
+#define CYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define CYRandomColor CYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 #endif

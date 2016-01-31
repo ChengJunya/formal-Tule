@@ -161,31 +161,9 @@
 
 
 -(void)itemSelected:(NSDictionary *)itemData{
-//    NSLog(@"%@",[itemData valueForKey:@"NAME"]);
-//    
-//    switch ([[itemData valueForKey:@"TYPE"] intValue]) {
-//        case 1:
-//        {
-//            
-//            break;
-//        }
-//        case 2:{
-////            [GHUDAlertUtils showZXColorAlert:[itemData valueForKey:@"TITLE"] subTitle:[itemData valueForKey:@"MESSAGE"] cancleButton:MultiLanguage(comCancel) sureButtonTitle:MultiLanguage(setvcAlertBtnSure) COLORButtonType:0 buttonHeight:40 clickedBlock:^(ZXColorAlert *alert, NSUInteger index) {
-////                if (index == 1) {
-////                    //[GAppversionHelper openAppStoreURL];
-////                }
-////            }];
-//            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHECK_VERSION object:@{@"isShowNotice":@"1"}];
-//            break;
-//        }
-//        case 3:{
-//            break;
-//        }
-//            
-//        default:
-//            break;
-//    }
+
+
+
 
 }
 -(void)viewWillAppear:(BOOL)animated{

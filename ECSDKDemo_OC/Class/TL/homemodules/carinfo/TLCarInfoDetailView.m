@@ -31,12 +31,7 @@
 
 -(void)setUpViews{
     [self addTitleAndPublishTime];
-    [self addImageView];
-    
-
-    
     [self addCarBasicInfo];
-    
     [self addCarOtherInfo];
     //[self addUserIcon];
     //[self addTitle];
@@ -45,8 +40,6 @@
     //[self addInfoView];
     //[self validateYOffSet];
     [self addTextContent];
-
-
 
 }
 

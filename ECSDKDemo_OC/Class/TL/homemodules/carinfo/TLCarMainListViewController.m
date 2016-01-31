@@ -112,49 +112,6 @@
     [self addCarMenu];
     [self addCarListViews];
     [self addModuleSelecter];
-    
-//    NSArray *menuData =  @[@{@"ID":@"1",@"NAME":@"攻略",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"2",@"NAME":@"路书",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"3",@"NAME":@"游记",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"4",@"NAME":@"召集活动",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"5",@"NAME":@"车讯",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"6",@"NAME":@"二手平台",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"7",@"NAME":@"应急救援",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"},
-//                           @{@"ID":@"8",@"NAME":@"商家",@"IMG":@"menu.png",@"VCNAME":@"TLModuleListViewController"}];
-//    
-//    NSArray *sortMenuArray =  @[@{@"ID":@"1",@"NAME":@"地点"},
-//                                @{@"ID":@"2",@"NAME":@"排序"}];
-//    
-//    NSArray *sortMenuItemsArray =  @[@{@"ID":@"1",@"NAME":@"默认排序"},
-//                                     @{@"ID":@"2",@"NAME":@"发表时间"},
-//                                     @{@"ID":@"2",@"NAME":@"人气最高"}];
-//    
-//    //add sortMenu
-//    _sortMenuView = [[TLDropViewMenu alloc] initWithFrame:CGRectMake(0.f, NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT, CGRectGetWidth(self.view.frame), SORT_MENU_HEIGHT) menuData:sortMenuArray];
-//    _sortMenuView.frameHeight = self.view.height-NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT;
-//    _sortMenuView.isMenuHidden = YES;
-//    [self.view addSubview:_sortMenuView];
-//    TLCitySelectView *citySelctView = [[TLCitySelectView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.width, self.view.height/2)];
-//    //TLCitySelectView *citySelctView2 = [[TLCitySelectView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.width, self.view.height/2)];
-//    TLDropMenu *sortItemMenu = [[TLDropMenu alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.frame),40.0f) menuData:sortMenuItemsArray];
-//    _sortMenuView.viewArray = [NSMutableArray arrayWithObjects:citySelctView,sortItemMenu, nil];
-//    
-//    
-//    
-//    //add topMenu
-//    _menu = [[TLDropMenu alloc] initWithFrame:CGRectMake(0.f, NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT, CGRectGetWidth(self.view.frame),self.view.height-NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT) menuData:menuData];
-//    [self.view addSubview:_menu];
-//    [_menu setFrame:CGRectMake(0.f, NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT, _menu.width, _menu.height)];
-//    __weak TLCarMainListViewController *weakController = self;
-//    _menu.ItemSelectedBlock=^(id itemData){
-//        [weakController setItemBtnTitle:itemData];
-//    };
-//    _menu.isMenuHidden = YES;
-//    _menu.selectedItem = self.itemData;
-//    
-    
-    
-
 }
 
 -(void)addSortView{
@@ -168,23 +125,13 @@
     
 }
 
-//-(void)setItemBtnTitle:(id)itemData{
-//    [_itemBtn setTitle:[itemData valueForKey:@"NAME"] forState:UIControlStateNormal];
-//    [_itemBtn setTitle:[itemData valueForKey:@"NAME"] forState:UIControlStateSelected];
-//    _itemBtn.selected = NO;
-//    [_itemBtn setNeedsDisplay];
-//    
-//
-//}
 
 - (UIButton*)addCreateActionBtn
 {
-    
-    //    UIImage *backImage = [UIImage imageNamed:@"ico_backon"];
+
     UIButton *actionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     actionBtn.frame = CGRectMake(0.f, 0.f, 44.f, 44.f);
     [actionBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    //    [actionBtn setImage:[UIImage imageNamed:@"ico_backon" ] forState:UIControlStateHighlighted];
     [actionBtn addTarget:self action:@selector(addCreateActionBtnHandler) forControlEvents:UIControlEventTouchUpInside];
     return actionBtn;
 }

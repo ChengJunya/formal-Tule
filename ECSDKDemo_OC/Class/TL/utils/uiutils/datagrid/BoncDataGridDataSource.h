@@ -11,9 +11,7 @@
 #import "BoncColumnSelectView.h"
 #import "BoncDataGridHeaderView.h"
 
-
 @interface BoncDataGridDataSource : NSObject<UITableViewDataSource,UITableViewDelegate,BoncColumnSelectViewDelegate,BoncDataGridHeaderViewDelegate>
-
 
 @property (nonatomic,copy) void (^ItemSelectedBlock)(id itemData);
 @property (nonatomic,strong) NSArray *sections;

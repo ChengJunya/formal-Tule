@@ -36,47 +36,18 @@
     [super viewDidLoad];
     
     self.requestArray = [NSMutableArray array];
-    //_isOpenMessage = NO;
-    //_isShowAbout = NO;
-    // Do any additional setup after loading the view.
-    
-    //YF-TODO LESSENCE DATE
-//    NSString *lastDate = @"2015-12-11";
-//    
-//    double lastDateInterval = [[RUtiles dateFromString:lastDate format:@"yyyy-MM-dd"] timeIntervalSinceReferenceDate];
-//    double nowDateInterval = [[NSDate new] timeIntervalSinceReferenceDate];
-//    
-//    if (nowDateInterval>lastDateInterval) {
-//        self.viewControllers = [NSArray arrayWithObjects:
-//                                [self viewControllerWithTabTitle:@"首页" image:[UIImage imageNamed:@"navigation_ bar1a"]  selectedImage:[[UIImage imageNamed:@"navigation_ bar1b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] vcName:@"TLHomeViewController"],
-//                                [self viewControllerWithTabTitle:@"消息" image:[UIImage imageNamed:@"navigation_ bar2a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar2b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"SessionViewController"],
-//                                [self viewControllerWithTabTitle:@"通信录" image:[UIImage imageNamed:@"navigation_ bar3a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar3b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLContactListViewController"], nil];
-//    }else{
-//        self.viewControllers = [NSArray arrayWithObjects:
-//                                [self viewControllerWithTabTitle:@"首页" image:[UIImage imageNamed:@"navigation_ bar1a"]  selectedImage:[[UIImage imageNamed:@"navigation_ bar1b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] vcName:@"TLHomeViewController"],
-//                                [self viewControllerWithTabTitle:@"消息" image:[UIImage imageNamed:@"navigation_ bar2a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar2b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"SessionViewController"],
-//                                [self viewControllerWithTabTitle:@"通信录" image:[UIImage imageNamed:@"navigation_ bar3a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar3b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLContactListViewController"],
-//                                [self viewControllerWithTabTitle:@"个人中心" image:[UIImage imageNamed:@"navigation_ bar4a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar4b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLMineViewController"], nil];
-//    }
+
     self.viewControllers = [NSArray arrayWithObjects:
                             [self viewControllerWithTabTitle:@"首页" image:[UIImage imageNamed:@"navigation_ bar1a"]  selectedImage:[[UIImage imageNamed:@"navigation_ bar1b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] vcName:@"TLHomeViewController"],
                             [self viewControllerWithTabTitle:@"消息" image:[UIImage imageNamed:@"navigation_ bar2a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar2b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"SessionViewController"],
                             [self viewControllerWithTabTitle:@"通信录" image:[UIImage imageNamed:@"navigation_ bar3a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar3b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLContactListViewController"],
                             [self viewControllerWithTabTitle:@"个人中心" image:[UIImage imageNamed:@"navigation_ bar4a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar4b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLMineViewController"], nil];
-    
-    
-    
-    
     [self addNoticifacation];
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHECK_VERSION object:@{@"isShowNotice":@"0"}];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareDisplay) name:KNOTIFICATION_onMesssageChanged object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeTabMessageCount) name:MESSAGE_COUNT_CHAGE_NOTICE object:nil];
-    
 
 }
-
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -91,6 +62,7 @@
     }
 
 }
+
 -(void)prepareDisplay{
     [self changeTabMessageCount];
 }

@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E1A07D065F4A7B4D185B304C959C3DED378251BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E1A07D065F4A7B4D185B304C959C3DED378251BF" : 0,
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BC9D35EE-AD03-47D3-B599-F2B30A9DC792",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E1A07D065F4A7B4D185B304C959C3DED378251BF" : "%E9%80%94%E4%B9%901.5.1-162\/",
+    "da896091-8235-4b1a-b360-3386eed628a9++2439" : "%E9%80%94%E4%B9%901.5.1-162\/ECSDKDemo_OC\/thirdparty\/KxMenu\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TL",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TL.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ChengJunya\/-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E1A07D065F4A7B4D185B304C959C3DED378251BF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/172.21.31.24:18080\/svn\/Drug",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "da896091-8235-4b1a-b360-3386eed628a9++2439"
+    }
+  ]
+}

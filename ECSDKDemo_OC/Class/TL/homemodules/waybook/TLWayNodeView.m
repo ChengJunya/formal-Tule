@@ -78,9 +78,7 @@
     dayLabel.font = FONT_18;
     dayLabel.textColor = [UIColor orangeColor];
     [self addSubview:dayLabel];
-    
-    
-    
+
     //draw box
     TLLeftRawBox *box = [[TLLeftRawBox alloc] initWithFrame:CGRectMake(linePaddingLeft+10.f, boxPaddingTop, CGRectGetWidth(self.frame)-linePaddingLeft-20.f, CGRectGetHeight(self.frame)-boxPaddingTop*2)];
     box.arrawPaddingTop = anchorPaddingTop - boxPaddingTop;
@@ -137,16 +135,11 @@
                 [infoView addSubview:imageView];
                 
                 [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"ico_loading_logo"]];
-                
-                
-                
             }
         }
         
     }];
-    
-    
-    
+
     UIButton *handlerBtn = [[UIButton alloc] initWithFrame:infoView.bounds];
     [infoView addSubview:handlerBtn];
 

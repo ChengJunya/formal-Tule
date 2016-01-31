@@ -19,7 +19,6 @@
 @end
 @implementation TLCitySelectView
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -30,24 +29,16 @@
     }
     return self;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
-
+#warning ------------------TOLOOK
 -(void)addProvinceTable{
     
     NSArray *dataList = @[];
-    
-
     self.provinceTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.frame)/2, self.height)];
     [self addSubview:self.provinceTable];
     self.provinceTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.provinceTable.backgroundColor = COLOR_DEF_BG;
+//     self.provinceTable.backgroundColor = CYRandomColor;
     NSDictionary *itemData = @{
                                @"type": @"REPORT",
                                @"gridType": PROVINCE_CELL,
@@ -66,12 +57,9 @@
     
 }
 -(void)addCityTable{
-    
 
-    
     NSArray *dataList = @[];
-    
-    
+
     self.cityTable = [[UITableView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.frame)/2, 0.0f, CGRectGetWidth(self.frame)/2, self.height)];
     [self addSubview:self.cityTable];
     self.cityTable.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -96,18 +84,14 @@
 }
 
 -(void)provinceItemSelected:(TLProvinceDTO *)itemData{
-    NSLog(@"%@",itemData.provinceName);
     [self getCityByProvinceId:itemData.provinceId ];
-    
-    
+
 }
 
 -(void)cityItemSelected:(TLCityDTO *)itemData{
-    NSLog(@"%@",itemData.cityName);
     if (self.SelectedCityBlock) {
         self.SelectedCityBlock(itemData);
     }
-    
 }
 
 //获取省份
@@ -125,12 +109,8 @@
                 [weakSelf.provinceTable selectRowAtIndexPath:first animated:YES scrollPosition:UITableViewScrollPositionTop];
                 TLProvinceDTO *provice = proviceList[0];
                 [weakSelf getCityByProvinceId:provice.provinceId];
-                
             }
-            
         }
-        
-        
     }];
 }
 
@@ -144,13 +124,11 @@
             [array addObject:[NSMutableArray arrayWithArray:cityList]];
             [weakSelf.cityTableViewDataSource setGridData:array];
             
-            if (cityList.count>0) {
+            if (cityList.count > 0) {
                 NSIndexPath *first = [NSIndexPath indexPathForRow:0 inSection:0];
                 [self.cityTable selectRowAtIndexPath:first animated:YES scrollPosition:UITableViewScrollPositionTop];
             }
         }
-        
-        
     }];
 }
 
