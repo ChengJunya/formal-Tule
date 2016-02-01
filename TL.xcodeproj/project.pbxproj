@@ -6676,7 +6676,7 @@
 					"$(inherited)",
 				);
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mst.tl-test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mst.tl;
 				PRODUCT_NAME = TL;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -6730,7 +6730,7 @@
 					"$(inherited)",
 				);
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mst.tl-test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mst.tl;
 				PRODUCT_NAME = TL;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

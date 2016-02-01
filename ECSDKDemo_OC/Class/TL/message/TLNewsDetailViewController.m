@@ -166,8 +166,7 @@
  *  分享
  */
 -(void)shareAction{
-    
-    
+
     NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,self.detailDto.newsPic];
     
     TLShareDTO *shareDto = [[TLShareDTO alloc] init];

@@ -161,15 +161,17 @@
 }
 
 -(void)shareAction{
-    
-    
-    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,[self.detailDto.images[0] imageUrl]];
-    
+
     TLShareDTO *shareDto = [[TLShareDTO alloc] init];
+    if (self.detailDto.images.count){
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,[self.detailDto.images[0] imageUrl]];
+    shareDto.shareImageUrl = imageUrl;//obj.imageUrl;
+    }
+
     shareDto.shareUrl = UMSOCIAL_WXAPP_URL;//obj.shareUrl;
     shareDto.shareDesc = self.detailDto.carEvalDesc.length>50?[self.detailDto.carEvalDesc substringToIndex:49]:self.detailDto.carEvalDesc;
     shareDto.shareTitle = self.detailDto.carType;//obj.title;
-    shareDto.shareImageUrl = imageUrl;//obj.imageUrl;
+
     shareDto.patAwardId = @"";//obj.patAwardId;
     
     

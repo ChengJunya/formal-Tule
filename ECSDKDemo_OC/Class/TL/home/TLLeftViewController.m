@@ -238,7 +238,8 @@
     __block NSInteger stepNumber = 0;
     __weak TLLeftViewController *weakSelf = self;
     [GHUDAlertUtils toggleLoadingInView:self.view];
-    NSInteger cashSize = [[SDImageCache sharedImageCache] getSize];
+    NSInteger cashSize = [[
+                           SDImageCache sharedImageCache] getSize];
     //清除图片缓存：
     [[SDImageCache sharedImageCache] clearMemory];
     stepNumber++;

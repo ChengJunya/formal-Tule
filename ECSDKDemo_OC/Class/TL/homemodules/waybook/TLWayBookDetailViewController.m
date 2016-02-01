@@ -237,15 +237,15 @@
 }
 
 -(void)shareAction{
-    
-    
-    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,[detailDto.images[0] imageUrl]];
-    
     TLShareDTO *shareDto = [[TLShareDTO alloc] init];
+    if (detailDto.images.count) {
+        NSString *imageUrl = [NSString stringWithFormat:@"%@%@",TL_SERVER_BASE_URL,[detailDto.images[0] imageUrl]];
+        shareDto.shareImageUrl = imageUrl;//obj.imageUrl;
+    }
     shareDto.shareUrl = UMSOCIAL_WXAPP_URL;//obj.shareUrl;
     shareDto.shareDesc = detailDto.content.length>50?[detailDto.content substringToIndex:49]:detailDto.content;//obj.shareDesc;
     shareDto.shareTitle = detailDto.title;//obj.title;
-    shareDto.shareImageUrl = imageUrl;//obj.imageUrl;
+
     shareDto.patAwardId = @"";//obj.patAwardId;
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SHARE object:shareDto];
 }

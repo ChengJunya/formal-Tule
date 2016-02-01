@@ -195,6 +195,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SHARE object:shareDto];
 }
 
+
 -(void)getDetailData{
     WEAK_SELF(self);
     TLCarDetailRequestDTO *requestDTO = [[TLCarDetailRequestDTO alloc] init];

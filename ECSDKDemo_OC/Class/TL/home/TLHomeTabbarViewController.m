@@ -38,10 +38,10 @@
     self.requestArray = [NSMutableArray array];
 
     self.viewControllers = [NSArray arrayWithObjects:
-                            [self viewControllerWithTabTitle:@"首页" image:[UIImage imageNamed:@"navigation_ bar1a"]  selectedImage:[[UIImage imageNamed:@"navigation_ bar1b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] vcName:@"TLHomeViewController"],
-                            [self viewControllerWithTabTitle:@"消息" image:[UIImage imageNamed:@"navigation_ bar2a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar2b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"SessionViewController"],
-                            [self viewControllerWithTabTitle:@"通信录" image:[UIImage imageNamed:@"navigation_ bar3a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar3b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLContactListViewController"],
-                            [self viewControllerWithTabTitle:@"个人中心" image:[UIImage imageNamed:@"navigation_ bar4a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar4b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLMineViewController"], nil];
+        [self viewControllerWithTabTitle:@"首页" image:[UIImage imageNamed:@"navigation_ bar1a"]  selectedImage:[[UIImage imageNamed:@"navigation_ bar1b"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] vcName:@"TLHomeViewController"],
+        [self viewControllerWithTabTitle:@"消息" image:[UIImage imageNamed:@"navigation_ bar2a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar2b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"SessionViewController"],
+        [self viewControllerWithTabTitle:@"通信录" image:[UIImage imageNamed:@"navigation_ bar3a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar3b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLContactListViewController"],
+        [self viewControllerWithTabTitle:@"个人中心" image:[UIImage imageNamed:@"navigation_ bar4a"] selectedImage:[[UIImage imageNamed:@"navigation_ bar4b"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]vcName:@"TLMineViewController"], nil];
     [self addNoticifacation];
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHECK_VERSION object:@{@"isShowNotice":@"0"}];
     
@@ -155,11 +155,6 @@
     _share.patAwardId = shareDto.patAwardId;
     
     [GApplication.keyWindow addSubview:_share.view];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)willAppearIn:(UINavigationController *)navigationController

@@ -412,6 +412,7 @@
     
     NSLog(@"productID:%@", response.invalidProductIdentifiers);
     NSLog(@"产品付费数量:%lu",[product count]);
+
     
     
     self.products = product;
