@@ -42,25 +42,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人中心";
-    
-    
-    
 //    NSString *filePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"userinfo.json"]];
 //    NSString *jsonStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 //    SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
 //    NSDictionary *userInfoData = [jsonParser objectWithString:jsonStr];
 //    self.userInfoDic = [NSMutableDictionary dictionaryWithDictionary:userInfoData];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 }
 
@@ -72,12 +58,6 @@
 
     [self getUserInfoView];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(void)getUserInfoView{
     WEAK_SELF(self);
@@ -163,8 +143,7 @@
 }
 
 -(void)addInfo{
-    
-    
+
     CGFloat updateBtnHeight = 20.f;
     CGFloat userIconWidth = 80.f;
     CGFloat vGap = 5.f;
@@ -467,8 +446,6 @@
         
     }];
 }
-
-
 
 -(void)personInfoHandler:(id)sender{
     

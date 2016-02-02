@@ -1,6 +1,0 @@
-framework module ImagePlayerView {
-  umbrella header "ImagePlayerView-umbrella.h"
-
-  export *
-  module * { export * }
-}

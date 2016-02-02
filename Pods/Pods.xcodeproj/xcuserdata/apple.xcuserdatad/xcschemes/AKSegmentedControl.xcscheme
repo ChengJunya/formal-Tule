@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E5295302DFD15C9B66AF07CD'
+               BlueprintIdentifier = '7DE88E0D95AD06B9C881CC5B'
                BlueprintName = 'AKSegmentedControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AKSegmentedControl.framework'>

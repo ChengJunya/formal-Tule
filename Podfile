@@ -7,7 +7,6 @@ pod 'JSONModel'
 pod 'PEPhotoCropEditor'
 pod 'CustomActionsheet'
 use_frameworks!
-pod 'ImagePlayerView'
 pod 'IQKeyboardManager'
 pod 'TOWebViewController'
 pod "KVNMaskedPageControl"
@@ -17,3 +16,4 @@ pod 'CRToast', '~> 0.0.7'
 pod "MWPhotoBrowser"
 pod 'UMengSocial', '~> 4.3'
 pod 'Bugtags'
+pod 'UMengAnalytics'

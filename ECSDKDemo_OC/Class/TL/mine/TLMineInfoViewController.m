@@ -275,20 +275,9 @@
     [borthdayFromItem.rightView removeSubviews];
     [borthdayFromItem.rightView addSubview:birthBtn];
     [birthBtn addTarget:self action:@selector(selectBirthBtnHandler:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
-    
-    
 
-    
-    
-    
     yOffSet = yOffSet + CGRectGetHeight(borthdayFromItem.frame) + vGap;
-    
-    
-    
-    
+
     cityFormItem = [[TLUpdateFormItem alloc] initWithFrame:CGRectMake(0.f, yOffSet, CGRectGetWidth(self.view.frame), 40.f) itemData:@{@"LABEL_NAME":@"城市：",@"LABEL_VALUE":self.userInfoDto.profession,@"PLACE_HOLDER":@"写入职业"}];
     [self.contentScrollView addSubview:cityFormItem];
     
@@ -321,16 +310,9 @@
     [cityFormItem.rightView removeSubviews];
     [cityFormItem.rightView addSubview:cityView];
     [selectCityBtn addTarget:self action:@selector(cityBtnHandler:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
-    
-    
-    yOffSet = yOffSet + CGRectGetHeight(cityFormItem.frame) + vSpace;
-    
 
-    
-    
+    yOffSet = yOffSet + CGRectGetHeight(cityFormItem.frame) + vSpace;
+  
     professionFromItem = [[TLUpdateFormItem alloc] initWithFrame:CGRectMake(0.f, yOffSet, CGRectGetWidth(self.view.frame), 40.f) itemData:@{@"LABEL_NAME":@"职业：",@"LABEL_VALUE":self.userInfoDto.profession,@"PLACE_HOLDER":@"写入职业"}];
     [self.contentScrollView addSubview:professionFromItem];
     

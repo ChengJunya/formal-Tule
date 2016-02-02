@@ -57,7 +57,7 @@
   return nav;
 }
 
--(UIViewController*) viewControllerWithTabTitle:(NSString*) title image:(UIImage*)image selectedImage:(UIImage*)selectedImage  vcName:(NSString *)vcName
+- (UIViewController *) viewControllerWithTabTitle:(NSString*) title image:(UIImage*)image selectedImage:(UIImage*)selectedImage  vcName:(NSString *)vcName
 {
     UIViewController *vc = [[NSClassFromString(vcName) alloc] init];
     

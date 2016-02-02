@@ -107,6 +107,7 @@
 		05FD13181A4C0F5700C39160 /* IMMsgDBAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD13121A4C0F5700C39160 /* IMMsgDBAccess.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05FD13191A4C0F5700C39160 /* Statement.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FD13141A4C0F5700C39160 /* Statement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1511E03833AB3D7AB0E9D6BC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48712643C76F820AFCEC3B2E /* Pods.framework */; };
+		182B5B431C608BB900287A69 /* ImagePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B5B421C608BB900287A69 /* ImagePlayerView.m */; };
 		1845FF511C589A1E002CB8C0 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1845FF411C589A1E002CB8C0 /* MJRefresh.bundle */; };
 		1845FF521C589A1E002CB8C0 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845FF441C589A1E002CB8C0 /* MJRefreshBaseView.m */; };
 		1845FF531C589A1E002CB8C0 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845FF461C589A1E002CB8C0 /* MJRefreshConst.m */; };
@@ -133,6 +134,7 @@
 		18873DA11C5D9A9C0062878F /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18873DA01C5D9A9C0062878F /* PEPhotoCropEditor.bundle */; };
 		189C8A501C59AB90006E8F82 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189C8A4F1C59AB8F006E8F82 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		189EC1E71C5B11590007B2F1 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EC1E61C5B11590007B2F1 /* Foundation+Log.m */; };
+		18D2EB571C6070BE00A8CC03 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2EB561C6070BE00A8CC03 /* Launch Screen.storyboard */; };
 		1D6F9B5E1A3C42A300A7D2D7 /* add_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F9B5C1A3C42A300A7D2D7 /* add_contact_on.png */; };
 		1D6F9B5F1A3C42A300A7D2D7 /* add_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F9B5D1A3C42A300A7D2D7 /* add_contact.png */; };
 		1D7A0CF01A77383C008563F0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7A0CEF1A77383C008563F0 /* CoreTelephony.framework */; };
@@ -852,8 +854,8 @@
 		05967C801A30625700C98C86 /* TL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05967C841A30625700C98C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05967C851A30625700C98C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		05967C871A30625700C98C86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
-		05967C881A30625700C98C86 /* AppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		05967C871A30625700C98C86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		05967C881A30625700C98C86 /* AppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; path = AppDelegate.m; sourceTree = "<group>"; };
 		05967C901A30625700C98C86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05967C991A30625700C98C86 /* TLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05967C9E1A30625700C98C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -985,6 +987,8 @@
 		05FD13131A4C0F5700C39160 /* Statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statement.h; sourceTree = "<group>"; };
 		05FD13141A4C0F5700C39160 /* Statement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statement.m; sourceTree = "<group>"; };
 		0AE3473A4E04F0D98FEEDDAF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		182B5B411C608BB900287A69 /* ImagePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePlayerView.h; sourceTree = "<group>"; };
+		182B5B421C608BB900287A69 /* ImagePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePlayerView.m; sourceTree = "<group>"; };
 		1845FF411C589A1E002CB8C0 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		1845FF421C589A1E002CB8C0 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		1845FF431C589A1E002CB8C0 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -1036,6 +1040,7 @@
 		18873DA01C5D9A9C0062878F /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
 		189C8A4F1C59AB8F006E8F82 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		189EC1E61C5B11590007B2F1 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		18D2EB561C6070BE00A8CC03 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1D6F9B5C1A3C42A300A7D2D7 /* add_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_contact_on.png; sourceTree = "<group>"; };
 		1D6F9B5D1A3C42A300A7D2D7 /* add_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_contact.png; sourceTree = "<group>"; };
 		1D7A0CEF1A77383C008563F0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -2454,9 +2459,12 @@
 				05967CEA1A30684F00C98C86 /* Class */,
 				05967CE61A30668500C98C86 /* Custom */,
 				05967CE71A30668500C98C86 /* thirdparty */,
-				05967C901A30625700C98C86 /* Images.xcassets */,
-				18873D9F1C5D9A9C0062878F /* Resources */,
 				05967C831A30625700C98C86 /* Supporting Files */,
+				18873D9F1C5D9A9C0062878F /* Resources */,
+				05967C901A30625700C98C86 /* Images.xcassets */,
+				18D2EB561C6070BE00A8CC03 /* Launch Screen.storyboard */,
+				05967C871A30625700C98C86 /* AppDelegate.h */,
+				05967C881A30625700C98C86 /* AppDelegate.m */,
 			);
 			name = TL;
 			path = ECSDKDemo_OC;
@@ -2616,6 +2624,7 @@
 		05967CE71A30668500C98C86 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				182B5B401C608BB900287A69 /* ImagePlayerView */,
 				184DF8B51C58AE9200751A20 /* AFNetworking */,
 				184DF8B11C58AD6400751A20 /* CustomActionSheet */,
 				1845FF401C589A1E002CB8C0 /* MJRefresh */,
@@ -2664,8 +2673,6 @@
 				3E3109071A7FD121007E18A4 /* TL */,
 				05967D111A30856A00C98C86 /* Model */,
 				05967CEE1A3083D500C98C86 /* View */,
-				05967C871A30625700C98C86 /* AppDelegate.h */,
-				05967C881A30625700C98C86 /* AppDelegate.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -2923,6 +2930,15 @@
 				05FD13141A4C0F5700C39160 /* Statement.m */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		182B5B401C608BB900287A69 /* ImagePlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				182B5B411C608BB900287A69 /* ImagePlayerView.h */,
+				182B5B421C608BB900287A69 /* ImagePlayerView.m */,
+			);
+			path = ImagePlayerView;
 			sourceTree = "<group>";
 		};
 		1845FF401C589A1E002CB8C0 /* MJRefresh */ = {
@@ -5580,6 +5596,7 @@
 				05967C7E1A30625700C98C86 /* Resources */,
 				958E32D666BD5569ACB6FE78 /* Embed Pods Frameworks */,
 				49E95B46E75D9931B72FF918 /* Copy Pods Resources */,
+				18D2EB551C60469D00A8CC03 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -5696,6 +5713,7 @@
 				05C82B211A3707FF0010F5D6 /* dialogue_camera_icon_on@2x.png in Resources */,
 				1D6F9B5E1A3C42A300A7D2D7 /* add_contact_on.png in Resources */,
 				3E576F561AEE8E5C00AA569B /* AlipaySDK.bundle in Resources */,
+				18D2EB571C6070BE00A8CC03 /* Launch Screen.storyboard in Resources */,
 				3E48761D1A9073CA001642AD /* list_8.json in Resources */,
 				05C82B381A3707FF0010F5D6 /* press_speak_icon_04@2x.png in Resources */,
 				05C82B3B1A3707FF0010F5D6 /* press_speak_icon_07@2x.png in Resources */,
@@ -5782,6 +5800,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18D2EB551C60469D00A8CC03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SKIP_DEBUG_BUILDS=1     #在Debug模式下编译是否自动上传符号表 0 上传 1不上传\nSKIP_SIMULATOR_BUILDS=1 #在模拟器环境下编译是否自动上传符号表 0上传 1不上传\nAPP_KEY=\"\"              #请填写应用的App Key\nAPP_SECRET=\"\"           #请填写应用的App Secret，可向应用创建者索要\nSCRIPT_SRC=$(find \"$PROJECT_DIR\" -name 'Bugtags_dsym_autoupload.sh' | head -1)\nif [ ! \"${SCRIPT_SRC}\" ]; then\necho \"Bugtags: err: script not found. Make sure that you're including Bugtags.bundle in your project directory\"\nexit 1\nfi\nsource \"${SCRIPT_SRC}\"";
+		};
 		49E95B46E75D9931B72FF918 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -6043,6 +6074,7 @@
 				3ED6D12F1A8A508400026FB0 /* TLDrawerViewController.m in Sources */,
 				3E48802D1A98C33D001642AD /* NetRequestHelper.m in Sources */,
 				3EA5F6741AF629DC008A7C55 /* TLViewOrgResponseDTO.m in Sources */,
+				182B5B431C608BB900287A69 /* ImagePlayerView.m in Sources */,
 				3E08BAEC1A83C43600B07540 /* SuperViewControllerWithSearchBar.m in Sources */,
 				3E4880441A98D5ED001642AD /* NSString+Json.m in Sources */,
 				3ED6D1361A8A61AA00026FB0 /* RIconTextBtn.m in Sources */,

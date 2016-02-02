@@ -31,6 +31,7 @@
 #import "UMSocialQQHandler.h"
 #import "TLModuleDataHelper.h"
 
+#import "MobClick.h"
 #import <Bugtags/Bugtags.h>
 @interface AppDelegate ()<BPushDelegate>
 @property (nonatomic, strong) LoginViewController *loginView;
@@ -40,7 +41,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"MyDatabase.sqlite"];
     
     /**
@@ -119,7 +120,9 @@
     [Bugtags startWithAppKey:@"2e38bdab09f73c655c6936764f3a6f42" invocationEvent:BTGInvocationEventBubble];
     return YES;
 
-    
+    //友盟统计
+    [MobClick startWithAppkey:@"56b01969e0f55af4ec00113b" reportPolicy:BATCH   channelId:nil];
+
     return YES;
 }
 
@@ -148,13 +151,6 @@
     NSLog(@"test:%@",deviceToken);
     [BPush registerDeviceToken:deviceToken];
     [BPush bindChannel];
-    
-    
-    
-
-
-    
-    
 }
 
 // 当 DeviceToken 获取失败时，系统会回调此方法
@@ -176,20 +172,6 @@
 {
     NSLog(@"%@",[NSString stringWithFormat:@"Method: %@\n%@",method,data]);
     
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -236,9 +218,6 @@
     [MagicalRecord cleanUp];
 
 }
-
-
-
 
 
 //登录页面和主页面的切换
@@ -319,6 +298,10 @@ void UncaughtExceptionHandler(NSException *exception) {
     return  [UMSocialSnsService handleOpenURL:url];
 }
 
-
+//- (UIStatusBarStyle)preferredStatusBarStyle{
+//
+//    return UIStatusBarStyleLightContent;
+//
+//}
 
 @end

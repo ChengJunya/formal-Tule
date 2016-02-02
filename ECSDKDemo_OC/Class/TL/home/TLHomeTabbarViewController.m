@@ -46,7 +46,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CHECK_VERSION object:@{@"isShowNotice":@"0"}];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareDisplay) name:KNOTIFICATION_onMesssageChanged object:nil];
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -54,12 +53,13 @@
     
     [self changeTabMessageCount];
     
-
 }
+
+#warning ---------- 此处有改动
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    if (self.selectedIndex==1) {
-        self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",0];
-    }
+//    if (self.selectedIndex==1) {
+//        self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",0];
+//    }
 
 }
 
@@ -93,12 +93,8 @@
     
     //检查更新
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkToUpdate:) name:NOTIFICATION_CHECK_VERSION object:nil];
-    
-    
 
 }
-
-
 
 -(void)checkToUpdate:(NSNotification *)notification
 {
@@ -109,8 +105,7 @@
             
             NSString *versionMessage = versionData.result.updateNote;
             versionMessage = [versionMessage stringByReplacingOccurrencesOfString:@"|" withString:@"\n"];
-            
-            
+
             RTLHelper.hasNewVersion = YES;
             
             [GHUDAlertUtils showZXColorAlert:@"有新版本需要升级" subTitle:versionMessage cancleButton:MultiLanguage(comCancel) sureButtonTitle:MultiLanguage(setvcAlertBtnSure) COLORButtonType:0 buttonHeight:40 clickedBlock:^(ZXColorAlert *alert, NSUInteger index) {
@@ -129,25 +124,16 @@
     }];
 }
 
-
-
-
-
-
 - (void)showShareView:(NSNotification *)notification {
     
     TLShareDTO *shareDto = notification.object;
-    
-    
-    
     self.share = [[DUShareViewController alloc] init];
 //    _share.shareUrl = @"http://www.baidu.com";//obj.shareUrl;
 //    _share.shareDesc = @"途乐，乐在途中！";//obj.shareDesc;
 //    _share.shareTitle = @"途乐";//obj.title;
 //    _share.shareImageUrl = @"http://file01.16sucai.com/d/file/2013/0720/20130720022635795.jpg";//obj.imageUrl;
 //    _share.patAwardId = @"wxf51c8154f251195f";//obj.patAwardId;
-    
-    
+
     _share.shareUrl = shareDto.shareUrl;
     _share.shareDesc = shareDto.shareDesc;
     _share.shareTitle = shareDto.shareTitle;
@@ -161,10 +147,6 @@
 {
     [self addCenterButtonWithImage:[UIImage imageNamed:@"tab_center.png"] highlightImage:[UIImage imageNamed:@"tab_center.png"]];
 }
-
-
-
-
 
 /**
  *@brief 解析获取到的账号信息内容

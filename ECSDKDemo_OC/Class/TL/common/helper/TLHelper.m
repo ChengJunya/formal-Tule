@@ -58,8 +58,7 @@ ZX_IMPLEMENT_SINGLETON(TLHelper)
     
     DUNavigationController *nav = [[DUNavigationController alloc] initWithRootViewController:home];
     
-    [home setMaximumLeftDrawerWidth:DRAWER_LEFT_WIDTH];
-    [home setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [home setMaximumLeftDrawerWidth:__kScreenWidth - 130];
     [home setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     [home setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
         MMDrawerControllerDrawerVisualStateBlock block;

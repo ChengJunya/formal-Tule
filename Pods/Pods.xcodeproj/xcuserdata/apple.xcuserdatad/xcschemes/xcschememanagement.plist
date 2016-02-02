@@ -39,11 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ImagePlayerView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -137,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4DBF5E7347441C6C50E3383077FD00AE</key>
+		<key>5855D213D188EE14086C1F827DE7B1FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5855D213D188EE14086C1F827DE7B1FF</key>
+		<key>62D5EC91E5041405C4A204BE324171A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,11 +162,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95DA30C5A847FABF6893C8BDD5CB32BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>96D3562E47E4792B0A6093A0323EB398</key>
 		<dict>
 			<key>primary</key>
@@ -183,16 +173,6 @@
 			<true/>
 		</dict>
 		<key>AB7360021CAA2913AC77DDE689D5A2AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BBC54A6F24351C31868DC36AB7E53D72</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BCF77E0268C61F6B73CEB915E3622EBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -213,6 +193,16 @@
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBAD280C8EC1304BF360FB33D23E90EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBEAF123E6F70CA817A8F8EF6FC5356F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
