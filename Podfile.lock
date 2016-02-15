@@ -1,11 +1,11 @@
 PODS:
   - AKSegmentedControl (1.0.4)
-  - Bugtags (1.1.7)
+  - Bugtags (1.1.8)
   - CRToast (0.0.9)
   - CustomActionsheet (0.1.1)
   - CWPopup (1.2.6)
   - DACircularProgress (2.3.1)
-  - IQKeyboardManager (3.3.6)
+  - IQKeyboardManager (4.0.0)
   - JSONModel (1.2.0)
   - KVNMaskedPageControl (0.1.0)
   - MBProgressHUD (0.9.2)
@@ -58,12 +58,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AKSegmentedControl: c076491ef773c0d70b70d03a8e5a0c04a9efbf08
-  Bugtags: 5522fa54c5a4db1d45a3fff3dd9def69e7172ee1
+  Bugtags: d2ddc13b8b56ed27a572dada3a1176340e0d07c9
   CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
   CustomActionsheet: 7202fa4fb0f607f70c8f52445ac94d06380b609d
   CWPopup: 3f8b0704a9914813d90372d66525d31f24b27d49
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  IQKeyboardManager: 037cf3aec1d0a045108859a47818714eb1bfc149
+  IQKeyboardManager: b91928f7927ba55a5829b4dcf4b7a6736ac9fc22
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   KVNMaskedPageControl: 63ae4dec0fa9d307731037b9831af0256d6db96e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1

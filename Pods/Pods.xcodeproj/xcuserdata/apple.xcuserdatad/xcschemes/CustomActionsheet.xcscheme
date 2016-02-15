@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BC40D99CA36CF0E9BFE366C9'
+               BlueprintIdentifier = '1C4D7B676CC4B9CE8D0CF797'
                BlueprintName = 'CustomActionsheet'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CustomActionsheet.framework'>

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2DCD9B9DE820B73F17D53027'
+               BlueprintIdentifier = '4ADAD8099ED888CA97513A4D'
                BlueprintName = 'KVNMaskedPageControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'KVNMaskedPageControl.framework'>
