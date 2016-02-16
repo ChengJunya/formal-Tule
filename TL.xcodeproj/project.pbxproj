@@ -6598,8 +6598,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tule Culture Media Co., Ltd (8E7E2655KU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tule Culture Media Co., Ltd (8E7E2655KU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiujing Wang (G4PLD38BDG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiujing Wang (G4PLD38BDG)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -6670,8 +6670,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiujing Wang (G4PLD38BDG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiujing Wang (G4PLD38BDG)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -6679,7 +6679,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/MAMapKit",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/Alipay",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ECSDKDemo_OC/TL-Prefix.pch";
@@ -6696,12 +6695,8 @@
 					"$(PROJECT_DIR)/ECSDKDemo_OC/Device",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/Device/lib",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMessage",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/VoiceConvert/lib",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/BaiduPush",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_4.2.3",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/libWeiboSDK",
 				);
 				OTHER_LDFLAGS = (
@@ -6725,15 +6720,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tule Culture Media Co., Ltd (8E7E2655KU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tule Culture Media Co., Ltd (8E7E2655KU)";
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/MAMapKit",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/Alipay",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ECSDKDemo_OC/TL-Prefix.pch";
@@ -6750,12 +6744,8 @@
 					"$(PROJECT_DIR)/ECSDKDemo_OC/Device",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/Device/lib",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMessage",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/VoiceConvert/lib",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/BaiduPush",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_4.2.3",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/Sina",
-					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/UMSocial/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/ECSDKDemo_OC/thirdparty/libWeiboSDK",
 				);
 				OTHER_LDFLAGS = (

@@ -98,10 +98,6 @@
         [self starComment:itemData];
     };
     [self.view addSubview:detailView];
-    
-    
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -110,10 +106,6 @@
     self.navBackItemHidden = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 -(void)communicateAction{
     [self addComment];
 }
@@ -140,10 +132,6 @@
     tripDataEndity.merchantImageUrl = itemDTO.merchantImageUrl;
     tripDataEndity.distance = itemDTO.distance;
     
-    
-    
-   
-    
     TLStoreDetailEntity *tripDetailEntity = [TLStoreDetailEntity MR_createEntity];
     tripDetailEntity.merchantId = _detailDto.merchantId;
     tripDetailEntity.merchantName = _detailDto.merchantName;
@@ -156,12 +144,7 @@
     tripDetailEntity.park = _detailDto.park;
     tripDetailEntity.merchantDesc = _detailDto.merchantDesc;
     tripDetailEntity.merchantIcon = _detailDto.merchantIcon;
-    
-    
-    
-    
-   
-    
+
     [_detailDto.images enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         TLImageDTO *imageDto = obj;
         TLImageEntity *image = [TLImageEntity MR_createEntity];
@@ -206,10 +189,7 @@
     
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getStoreDetail:requestDTO requestArray:self.requestArray block:^(id obj, BOOL ret) {
-        
-        
-        
-        
+
         [GHUDAlertUtils hideLoadingInView:self.view];
         if (ret) {
             weakSelf.detailDto = obj;

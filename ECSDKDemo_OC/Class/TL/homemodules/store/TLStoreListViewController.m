@@ -24,13 +24,6 @@
 
 @implementation TLStoreListViewController
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-
 -(void)itemSelected:(NSDictionary *)itemData{
 
     [self pushViewControllerWithName:@"TLStoreDetailViewController" itemData:itemData block:^(TLStoreDetailViewController* obj) {
@@ -154,9 +147,6 @@
 }
 
 
-
-
-
 -(void)initData{
     self.refrashTime = [RUtiles stringFromDateWithFormat:[NSDate new] format:@"yyyyMMddHHmmss"];
     self.currentPage = 1;
@@ -211,8 +201,6 @@
     request.orderBy = self.sortId;
     request.merchantType = storeTypeId;
 
-    
-    
     [GHUDAlertUtils toggleLoadingInView:self.view];
     [GTLModuleDataHelper getStoreList:request requestArray:self.requestArray block:^(id obj, BOOL ret, int pageNumber) {
         
